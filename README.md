@@ -25,7 +25,8 @@ Technologies, Libraries, APIs
     - Webpack and Babel to bundle and transpile the source JavaScript code 
     - npm to manage project dependencies
 
-Implementation Timeline: - Friday & Weekend: Set up the project structure. Create the basic HTML structure for the game interface and add minimal CSS for layout and styling. Work on general understanding of JavaScript. Add canvas to the project and experiment with how to use it. Create classes for the Game, Hotpot, Food, and Chopsticks. Create game and food designs.
+Implementation Timeline: 
+- Friday & Weekend: Set up the project structure. Create the basic HTML structure for the game interface and add minimal CSS for layout and styling. Work on general understanding of JavaScript. Add canvas to the project and experiment with how to use it. Create classes for the Game, Hotpot, Food, and Chopsticks. Create game and food designs.
 
 - Monday: Dedicate this day to implementing the core game logic. Handle keyboard events and manage the timing of key presses and releases for dropping food into the hotpot correctly. Food Prompt: Display speech bubbles with random food items that players need to type the corresponding keys for. Hotpot Interaction: Make sure that when players successfully drop food into the hotpot, it updates the hotpot's appearance accordingly. Basic Gameplay: Test the basic gameplay mechanics to ensure the correct functioning of key presses, food dropping, and hotpot interactions.
 
