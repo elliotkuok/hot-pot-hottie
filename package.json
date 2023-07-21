@@ -1,0 +1,37 @@
+{
+  "name": "hot-pot-hottie-main",
+  "version": "1.0.0",
+  "description": "Background: This project is a JavaScript game that centers around a hot pot dinner. The scene is: you’re on a hotpot date with a virtual companion, and your objective is to impress them by skillfully putting food into the pot without making a mess. If you splash too much, your virtual companion will be displeased and might even leave!",
+  "main": "index.js",
+  "browserslist": [
+    "defaults"
+  ],
+  "scripts": {
+    "watch": "webpack --watch --mode=development",
+    "build": "webpack --mode=production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elliotkuok/hot-pot-hottie.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elliotkuok/hot-pot-hottie/issues"
+  },
+  "homepage": "https://github.com/elliotkuok/hot-pot-hottie#readme",
+  "dependencies": {
+    "@babel/core": "^7.22.9",
+    "@babel/preset-env": "^7.22.9",
+    "babel-loader": "^9.1.3",
+    "core-js": "^3.31.1",
+    "css-loader": "^6.8.1",
+    "mini-css-extract-plugin": "^2.7.6",
+    "regenerator-runtime": "^0.13.11",
+    "sass": "^1.64.0",
+    "sass-loader": "^13.3.2",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  }
+}
