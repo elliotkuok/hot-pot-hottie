@@ -1,6 +1,6 @@
 # hot-pot-hottie
 
-Background: This project is a JavaScript game that centers around a hotpot dinner. The scene is: you’re on a hotpot date with a virtual companion, and your objective is to impress them by skillfully putting food into the pot without making a mess. If you splash too much, your virtual companion will be displeased and might even leave! 
+Background: This project is a JavaScript game that centers around a hot pot dinner. The scene is: you’re on a hotpot date with a virtual companion, and your objective is to impress them by skillfully putting food into the pot without making a mess. If you splash too much, your virtual companion will be displeased and might even leave! 
 
 The gameplay revolves around prompt-based interactions. Players are presented with speech bubbles that display various types of food, each assigned to a specific keyboard key. To successfully add the food to the hotpot, players must quickly type the corresponding key and then hold it until the precise moment when they must release it. Timing is crucial here, as releasing the key at the right moment ensures that the food lands gracefully into the hotpot, without any spills. The difficulty increases progressively, challenging players to hone their reflexes and coordination to maintain the perfect hotpot date.
 
