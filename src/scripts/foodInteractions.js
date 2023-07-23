@@ -1,3 +1,5 @@
+
+
 // Function to handle picking up the food when the corresponding key is pressed
 function handlePickUpFood(foodType) {
     // logic to pick up the food and display it in the player's hand

@@ -40,3 +40,10 @@ Bonus features if time permits:
     - Text bubbles with reactions from the date
     - Practice your skills before your date arrives
 
+
+Notes for implementation:
+Get the Javascript objects and classes set up, render somethign to the page and then start adding functionality
+
+make food class > general behavior (can be picked up, can be dropped)
+
+what are the building block picees, what behaviour they need, how they interact 

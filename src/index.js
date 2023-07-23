@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('keydown', (event) => {
     const keyPressed = event.key;
     // Check if the pressed key corresponds to any food type
-    if (keyPressed === 'A' || keyPressed === 'B' || keyPressed === 'C') {
+    if (keyPressed === 'W' || keyPressed === 'A' || keyPressed === 'S' || keyPressed === 'D') {
       handlePickUpFood(keyPressed);
     }
 });
@@ -19,7 +19,7 @@ document.addEventListener('keydown', (event) => {
 document.addEventListener('keyup', (event) => {
     const keyReleased = event.key;
     // Check if the released key corresponds to any food type
-    if (keyReleased === 'A' || keyReleased === 'B' || keyReleased === 'C') {
+    if (keyPressed === 'W' || keyPressed === 'A' || keyPressed === 'S' || keyPressed === 'D') {
       handleDropFood(keyReleased);
     }
 });
