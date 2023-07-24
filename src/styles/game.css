@@ -40,6 +40,13 @@ h1 {
     align-items: center;
 }
 
+img#table {
+    width: 80%;
+    height: 64%;
+    position: absolute;
+    top: 80px;
+}
+
 #side-legend {
     margin: 35px 10px;
 }
