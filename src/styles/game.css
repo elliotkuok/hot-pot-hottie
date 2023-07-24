@@ -7,10 +7,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 50px 0 15px;
 }
 
 h1 {
-    color: red;
+    font-family: 'Nerko One', cursive;
+    font-size: 80px;
 }
 
 .food-legend {
