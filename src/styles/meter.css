@@ -1,0 +1,25 @@
+#meter {
+    /* add meter styling */
+    width: 200px;
+    height: 20px;
+    border: 1px solid black;
+}
+
+.progress {
+    height:100%;
+    width:100%;
+    border:2px solid #000;
+    background: linear-gradient(to right, red 0, green 45%, green 55%, red 100%);
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  
