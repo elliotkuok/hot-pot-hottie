@@ -23,7 +23,7 @@ const config = {
           MiniCssExtractPlugin.loader, // create bundled css file
           {
             loader: 'css-loader', // resolves @import statements
-            options: { url: false, modules: true } // don't resolve url() statements//Enable CSS modules
+            options: { url: false } // don't resolve url() statements
           },
           'sass-loader', // compiles sass to css
         ]
@@ -42,3 +42,10 @@ module.exports = (env, argv) => {
 
   return config;
 }
+
+
+
+
+
+
+

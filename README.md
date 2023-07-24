@@ -47,3 +47,6 @@ Get the Javascript objects and classes set up, render somethign to the page and 
 make food class > general behavior (can be picked up, can be dropped)
 
 what are the building block picees, what behaviour they need, how they interact 
+
+take in a sprite file and then canvas can draw it for you in 
+

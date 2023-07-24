@@ -52,19 +52,18 @@ table {
 /*!***************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/game.css ***!
   \***************************************************************************************************/
-#L3diCXyIEl43QuOhwrT0 {
+#canvas-container {
     display: flex;
     justify-content: center;
 }
 
-#ZkPmDi6U9y4QPQCVmd54 {
+#title {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: red;
 }
 
-#ZkPmDi6U9y4QPQCVmd54 h1 {
+h1 {
     color: red;
 }
 
