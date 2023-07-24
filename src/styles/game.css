@@ -36,7 +36,8 @@ h1 {
     position: relative;
     display: flex;
     flex-direction: column; /* Stack elements vertically inside the game canvas */
-    justify-content: space-between; /* Distribute elements evenly in the vertical space */
+    /* justify-content: space-between; Distribute elements evenly in the vertical space */
+    align-items: center;
 }
 
 #side-legend {

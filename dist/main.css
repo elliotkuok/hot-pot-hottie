@@ -90,7 +90,8 @@ h1 {
     position: relative;
     display: flex;
     flex-direction: column; /* Stack elements vertically inside the game canvas */
-    justify-content: space-between; /* Distribute elements evenly in the vertical space */
+    /* justify-content: space-between; Distribute elements evenly in the vertical space */
+    align-items: center;
 }
 
 #side-legend {
@@ -99,7 +100,14 @@ h1 {
 /*!*****************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/hotpot.css ***!
   \*****************************************************************************************************/
+/* Placeholder until canvas works */
+img#hotpot {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 80px;
 
+}
 /*!***************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/date.css ***!
   \***************************************************************************************************/
@@ -113,7 +121,7 @@ h1 {
     border: 1px solid black;
     position: absolute;
     bottom: 20px; /* Adjust the distance from the bottom */
-    transform: translateX(50%); /* Center the meter */
+    /* transform: translateX(50%); change if #game-canvas align-items: is changed*/ 
     overflow: hidden;
 }
 

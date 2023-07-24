@@ -13,6 +13,7 @@ function handleDropFood(foodType) {
   
 // Event listener to detect when the player presses a key for picking up the food
 document.addEventListener('keydown', (event) => {
+  //change code to make event listener track if the circle was stopped at the right spot on the bar
   const keyPressed = event.key;
   // Check if the pressed key corresponds to any food type
   if (keyPressed === 'W' || keyPressed === 'A' || keyPressed === 'S' || keyPressed === 'D') {
