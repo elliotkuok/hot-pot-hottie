@@ -29,5 +29,5 @@ window.addEventListener('keydown', stopMovingCircle);
 moveCircle();
 
 // Export the functions to use them in the main game logic (index.js)
-export { moveCircle, stopMovingCircle }; //check with TA. code functionality actually works fine without this line
-//after adding the export, the key doesn't work the first time it's pressed
+export { moveCircle, stopMovingCircle }; 
+

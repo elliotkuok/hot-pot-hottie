@@ -17,7 +17,4 @@ document.addEventListener('DOMContentLoaded', () => {
     game.drawHotpotImage(hotpot);
     };
 
-    window.addEventListener('keydown', stopMovingCircle);
-    moveCircle();
-
 });

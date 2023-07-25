@@ -97,6 +97,7 @@ h1 {
     flex-direction: column; /* Stack elements vertically inside the game canvas */
     /* justify-content: space-between; Distribute elements evenly in the vertical space */
     align-items: center;
+    overflow: hidden;
 }
 
 img#table {
@@ -124,6 +125,7 @@ img#table {
     width: 50px;
     padding: 5px 20px ;
 }
+
 /*!*****************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/hotpot.css ***!
   \*****************************************************************************************************/
@@ -137,7 +139,13 @@ img#hotpot {
 /*!***************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/date.css ***!
   \***************************************************************************************************/
-
+#arms {
+    z-index: 4;
+    position: absolute;
+    left: -200px;
+    top: 50px;
+    width: 60%;
+}
 /*!****************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/meter.css ***!
   \****************************************************************************************************/
