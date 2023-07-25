@@ -11,8 +11,13 @@
 }
 
 h1 {
-    font-family: 'Nerko One', cursive;
+    font-family: 'Nerko One';
     font-size: 80px;
+}
+
+#side-legend p {
+    font-family: sans-serif;
+    font-weight: 500;
 }
 
 .food-legend {
@@ -49,4 +54,19 @@ img#table {
 
 #side-legend {
     margin: 35px 10px;
+}
+
+#speech-bubble {
+    border: solid;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    background-color: white;
+    z-index: 3;
+    border-radius: 10px;
+}
+
+#speech-bubble > img {
+    width: 50px;
+    padding: 5px 20px ;
 }
