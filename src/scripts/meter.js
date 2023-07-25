@@ -25,7 +25,14 @@ function stopMovingCircle() {
   cancelAnimationFrame(animationId);
 }
 
-document.addEventListener('keydown', stopMovingCircle);
+document.addEventListener('keydown', (event) => {
+  const keyPressed = event.key;
+  const displayedImageKey = document.querySelector('#speech-bubble img').dataset.key;
+  if (keyPressed === displayedImageKey) {
+    stopMovingCircle();
+  }
+});
+
 moveCircle();
 
 // Export the functions to use them in the main game logic (index.js)

@@ -1,12 +1,12 @@
 const foodItems = {
-    sausage: 'sausage.png',
-    mushroom: 'mushroom.png',
-    shrimp: 'shrimp.png',
-    fishball: 'fishball.png',
-    meatball: 'meatball.png',
-    dumpling: 'dumpling.png',
-    bokchoy: 'bokchoy.png',
-    tofu: 'tofu.png', 
+    sausage: { image: 'sausage.png', key: 'w' },
+    mushroom: { image: 'mushroom.png', key: 'a' },
+    shrimp: { image: 'shrimp.png', key: 's' },
+    fishball: { image: 'fishball.png', key: 'd' },
+    meatball: { image: 'meatball.png', key: 'ArrowUp' },
+    dumpling: { image: 'dumpling.png', key: 'ArrowLeft' },
+    bokchoy: { image: 'bokchoy.png', key: 'ArrowDown' },
+    tofu: { image: 'tofu.png', key: 'ArrowRight' },
 };
 
 // Function to randomly select an image key from the foodItems object
@@ -20,12 +20,13 @@ function getRandomImageKey() {
 function displayRandomImage() {
   const speechBubble = document.getElementById('speech-bubble');
   const imageKey = getRandomImageKey();
-  const imageName = foodItems[imageKey];
+  const imageName = foodItems[imageKey].image;
   const imageSrc = `/assets/food-icons/${imageName}`;
 
   const imageElement = document.createElement('img');
   imageElement.src = imageSrc;
   imageElement.alt = imageKey;
+  imageElement.dataset.key = foodItems[imageKey].key; // Save the assigned key as a data attribute
   // imageElement.id = imageKey + "prompt"; do I need this
 
   speechBubble.innerHTML = ''; // Clear existing content
@@ -56,3 +57,5 @@ document.addEventListener('keyup', () => {
   showSpeechBubble();
   displayRandomImage();
 });
+
+export { displayRandomImage, foodItems }; // Export the function and foodItems hash
