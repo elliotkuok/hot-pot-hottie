@@ -25,7 +25,7 @@ function stopMovingCircle() {
   cancelAnimationFrame(animationId);
 }
 
-window.addEventListener('keydown', stopMovingCircle);
+document.addEventListener('keydown', stopMovingCircle);
 moveCircle();
 
 // Export the functions to use them in the main game logic (index.js)

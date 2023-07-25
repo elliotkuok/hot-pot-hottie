@@ -16,21 +16,43 @@ function getRandomImageKey() {
     return keys[randomIndex];
   }
   
-  // Function to display the selected image in the speech-bubble div
-  function displayRandomImage() {
-    const speechBubble = document.getElementById('speech-bubble');
-    const imageKey = getRandomImageKey();
-    const imageName = foodItems[imageKey];
-    const imageSrc = `/assets/food-icons/${imageName}`;
-  
-    const imageElement = document.createElement('img');
-    imageElement.src = imageSrc;
-    imageElement.alt = imageKey;
-    // imageElement.id = imageKey + "prompt"; do I need this
-  
-    speechBubble.innerHTML = ''; // Clear existing content
-    speechBubble.appendChild(imageElement);
-  }
-  
-  // Call the displayRandomImage function to show the initial random image
+// Function to display the selected image in the speech-bubble div
+function displayRandomImage() {
+  const speechBubble = document.getElementById('speech-bubble');
+  const imageKey = getRandomImageKey();
+  const imageName = foodItems[imageKey];
+  const imageSrc = `/assets/food-icons/${imageName}`;
+
+  const imageElement = document.createElement('img');
+  imageElement.src = imageSrc;
+  imageElement.alt = imageKey;
+  // imageElement.id = imageKey + "prompt"; do I need this
+
+  speechBubble.innerHTML = ''; // Clear existing content
+  speechBubble.appendChild(imageElement);
+}
+
+// Function to hide the speech-bubble div
+function hideSpeechBubble() {
+  const speechBubble = document.getElementById('speech-bubble');
+  speechBubble.style.display = 'none';
+}
+
+function showSpeechBubble() {
+  const speechBubble = document.getElementById('speech-bubble');
+  speechBubble.style.display = 'block';
+}
+
+// Call the displayRandomImage function to show the initial random image
+displayRandomImage();
+
+// Add event listener for keydown event to trigger hiding the speech-bubble div
+document.addEventListener('keydown', () => {
+  hideSpeechBubble();
+});
+
+document.addEventListener('keyup', () => {
+  // add animation response of putting food into pot
+  showSpeechBubble();
   displayRandomImage();
+});
