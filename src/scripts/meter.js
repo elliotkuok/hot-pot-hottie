@@ -1,3 +1,5 @@
+import moveArmsToNewPosition from './arms.js';
+
 const circle = document.querySelector('.circle');
 const meterWidth = 300;
 let animationId;
@@ -30,6 +32,7 @@ document.addEventListener('keydown', (event) => {
   const displayedImageKey = document.querySelector('#speech-bubble img').dataset.key;
   if (keyPressed === displayedImageKey) {
     stopMovingCircle();
+    moveArmsToNewPosition(keyPressed);
   }
 });
 
