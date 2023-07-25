@@ -6,6 +6,7 @@
     top: 30px; /* Adjust the distance from the bottom */
     /* transform: translateX(50%); change if #game-canvas align-items: is changed*/ 
     overflow: hidden;
+    z-index: 2;
 }
 
 .progress {

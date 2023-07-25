@@ -2,7 +2,7 @@ const circle = document.querySelector('.circle');
 const meterWidth = 300;
 let animationId;
 let currentPosition = 0;
-let moveSpeed = 1.5; // Setting to 3 for now but remember to change
+let moveSpeed = 2; // Setting to 3 for now but remember to change
 let moveDirection = 'right';
 
 function moveCircle() {

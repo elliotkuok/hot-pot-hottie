@@ -52,6 +52,9 @@ table {
 /*!***************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/game.css ***!
   \***************************************************************************************************/
+body {
+    background: #F4E1A5;
+}
 #canvas-container {
     display: flex;
     justify-content: center;
@@ -67,11 +70,6 @@ table {
 h1 {
     font-family: 'Nerko One';
     font-size: 80px;
-}
-
-#side-legend p {
-    font-family: sans-serif;
-    font-weight: 500;
 }
 
 .food-legend {
@@ -102,13 +100,21 @@ h1 {
 
 img#table {
     width: 80%;
-    height: 64%;
+    height: 100%;
     position: absolute;
-    top: 80px;
+    top: 0px;
 }
 
 #side-legend {
-    margin: 35px 10px;
+    margin: 30px 10px;
+    background: white;
+    border:1px solid black;
+    padding-top: 5px;
+}
+
+#side-legend p {
+    font-family: sans-serif;
+    font-weight: 500;
 }
 
 #speech-bubble {
@@ -168,6 +174,7 @@ img#hotpot {
     top: 30px; /* Adjust the distance from the bottom */
     /* transform: translateX(50%); change if #game-canvas align-items: is changed*/ 
     overflow: hidden;
+    z-index: 2;
 }
 
 .progress {
