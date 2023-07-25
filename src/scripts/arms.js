@@ -3,41 +3,41 @@ const dateArms = document.getElementById('date-arms');
 
 function moveArmToNewPosition(keyPressed) {
   // Define the new position for the arms based on the key pressed
-  let newX = 0;
-  let newY = 0;
+  let newX = 200;
+  let newY = 250;
 
   switch (keyPressed) {
     case 'w': // Sausage
-      newX = 50;
-      newY = 100;
+      newX = -100;
+      newY = 250;
       break;
     case 'a': // Mushroom
-      newX = 100;
-      newY = 100;
+      newX = -100;
+      newY = 250;
       break;
     case 's': // Shrimp
-      newX = 150;
-      newY = 100;
+      newX = -100;
+      newY = 250;
       break;
     case 'd': // Fishball
-      newX = 200;
-      newY = 100;
+      newX = -100;
+      newY = 250;
       break;
     case 'ArrowUp': // Meatball
-      newX = 50;
-      newY = 150;
+      newX = -100;
+      newY = 250;
       break;
     case 'ArrowLeft': // Dumpling
-      newX = 100;
-      newY = 150;
+      newX = -100;
+      newY = 250;
       break;
     case 'ArrowDown': // Bokchoy
-      newX = 150;
-      newY = 150;
+      newX = -100;
+      newY = 250;
       break;
     case 'ArrowRight': // Tofu
-      newX = 200;
-      newY = 150;
+      newX = -100;
+      newY = 250;
       break;
     default:
       // If the key doesn't match any food item, don't move the arms
@@ -50,8 +50,8 @@ function moveArmToNewPosition(keyPressed) {
 
 function animateArm(targetX, targetY) {
   // Get the current position of the arms
-  const currentX = parseFloat(arm.style.left) || 0;
-  const currentY = parseFloat(arm.style.top) || 0;
+  const currentX = parseFloat(arm.style.left) || -200;
+  const currentY = parseFloat(arm.style.top) || 250;
 
   // Calculate the distance to move in each frame
   const distanceX = targetX - currentX;
