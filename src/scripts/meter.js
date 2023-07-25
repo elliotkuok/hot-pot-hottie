@@ -25,6 +25,10 @@ function moveCircle() {
 
 function stopMovingCircle() {
   cancelAnimationFrame(animationId);
+  const displayedImageKey = document.querySelector('#speech-bubble img').dataset.key;
+  setTimeout(() => {
+    moveArmsToNewPosition(displayedImageKey);
+  }, 500);
 }
 
 document.addEventListener('keydown', (event) => {
@@ -32,7 +36,7 @@ document.addEventListener('keydown', (event) => {
   const displayedImageKey = document.querySelector('#speech-bubble img').dataset.key;
   if (keyPressed === displayedImageKey) {
     stopMovingCircle();
-    moveArmsToNewPosition(keyPressed);
+    // moveArmsToNewPosition(keyPressed); //only if nt async
   }
 });
 
