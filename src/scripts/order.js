@@ -15,6 +15,42 @@ function getRandomImageKey() {
     const randomIndex = Math.floor(Math.random() * keys.length);
     return keys[randomIndex];
   }
+
+  function startTimer(duration) {
+    let timer = duration;
+    const timerInterval = 10; // Update the timer every 10ms
+    let timerId;
+  
+    function updateTimerBar() {
+      const speechBubble = document.getElementById('speech-bubble');
+      let timerBar = speechBubble.querySelector('.timer-bar');
+  
+      if (!timerBar) {
+        timerBar = document.createElement('div');
+        timerBar.className = 'timer-bar';
+        const progressBar = document.createElement('div');
+        progressBar.className = 'progress-bar';
+        timerBar.appendChild(progressBar);
+        speechBubble.appendChild(timerBar);
+      }
+  
+      const progressBar = timerBar.querySelector('.progress-bar');
+      const progress = (timer / duration) * 100;
+      progressBar.style.width = `${progress}%`;
+  
+      if (timer <= 0) {
+        // Hide the speech-bubble when the timer runs out
+        hideSpeechBubble();
+        clearInterval(timerId);
+      }
+      timer -= timerInterval / 1000;
+    }
+  
+    updateTimerBar(); // Call once immediately to show the initial progress
+  
+    // Call updateTimerBar every timerInterval (10ms)
+    timerId = setInterval(updateTimerBar, timerInterval);
+  }
   
 // Function to display the selected image in the speech-bubble div
 function displayRandomImage() {
@@ -31,6 +67,7 @@ function displayRandomImage() {
 
   speechBubble.innerHTML = ''; // Clear existing content
   speechBubble.appendChild(imageElement);
+  startTimer(5);
 }
 
 // Function to hide the speech-bubble div

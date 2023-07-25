@@ -72,6 +72,7 @@ img#table {
     background-color: white;
     z-index: 3;
     border-radius: 10px;
+    overflow: hidden;
 }
 
 #speech-bubble > img {
