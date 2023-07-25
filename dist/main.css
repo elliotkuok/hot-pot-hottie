@@ -140,11 +140,21 @@ img#hotpot {
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/date.css ***!
   \***************************************************************************************************/
 #arms {
-    z-index: 4;
+    z-index: 2;
     position: absolute;
     left: -200px;
     top: 50px;
     width: 60%;
+}
+
+#date-arms {
+    z-index: 2;
+    position: absolute;
+    right: -200px;
+    top: 50px;
+    width: 60%;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
 }
 /*!****************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/meter.css ***!

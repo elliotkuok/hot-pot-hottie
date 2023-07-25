@@ -1,12 +1,12 @@
 const foodItems = {
     sausage: 'sausage.png',
-    mushroom: 'mushroom.jpg',//update to png
-    shrimp: 'shrimp.jpg',//update to png
+    mushroom: 'mushroom.png',
+    shrimp: 'shrimp.png',
     fishball: 'fishball.png',
     meatball: 'meatball.png',
     dumpling: 'dumpling.png',
     bokchoy: 'bokchoy.png',
-    tofu: 'tofu.jpg', //update to png
+    tofu: 'tofu.png', 
 };
 
 // Function to randomly select an image key from the foodItems object
