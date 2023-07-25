@@ -47,15 +47,23 @@ function showSpeechBubble() {
 // Call the displayRandomImage function to show the initial random image
 displayRandomImage();
 
-// Add event listener for keydown event to trigger hiding the speech-bubble div
-document.addEventListener('keydown', () => {
-  hideSpeechBubble();
+// // Add event listener for keydown event to trigger hiding the speech-bubble div
+// document.addEventListener('keydown', () => {
+//   hideSpeechBubble();
+// });
+
+document.addEventListener('keydown', (event) => {
+  const keyPressed = event.key;
+  const displayedImageKey = document.querySelector('#speech-bubble img').dataset.key;
+  if (keyPressed === displayedImageKey) {
+    hideSpeechBubble();
+  }
 });
 
 document.addEventListener('keyup', () => {
   // add animation response of putting food into pot
-  showSpeechBubble();
-  displayRandomImage();
+  // showSpeechBubble();
+  // displayRandomImage();
 });
 
 export { displayRandomImage, foodItems }; // Export the function and foodItems hash
