@@ -75,14 +75,32 @@ function displayRandomImage() {
 
   speechBubble.innerHTML = ''; // Clear existing content
   speechBubble.appendChild(imageElement);
-  startTimer(5);
+  startTimer(3);
 }
 
 // Function to hide the speech-bubble div
+// function hideSpeechBubble() {
+//   const speechBubble = document.getElementById('speech-bubble');
+//   speechBubble.style.background = '#DC143C';
+//   hideTimerBar()
+//   setTimeout(() => {
+//     speechBubble.style.display = 'none';
+//   }, 1000);
+// }
 function hideSpeechBubble() {
   const speechBubble = document.getElementById('speech-bubble');
+  const timerBar = speechBubble.querySelector('.timer-bar');
+  if (timerBar) {
+    timerBar.style.display = 'none';
+  }
+  
+  if (!isMatchingKeyPressed) {
+    speechBubble.style.background = '#DC143C'; // Turn background red only if the matching key wasn't pressed
+  }
+  
   setTimeout(() => {
     speechBubble.style.display = 'none';
+    isMatchingKeyPressed = false; // Reset the variable when the timer ends
   }, 1000);
 }
 
@@ -98,23 +116,28 @@ displayRandomImage();
 // document.addEventListener('keydown', () => {
 //   hideSpeechBubble();
 // });
+let isMatchingKeyPressed = false;
 
 document.addEventListener('keydown', (event) => {
   const keyPressed = event.key;
   const displayedImageKey = document.querySelector('#speech-bubble img').dataset.key;
   const speechBubble = document.getElementById('speech-bubble');
+
   if (keyPressed === displayedImageKey) {
+    isMatchingKeyPressed = true;
     speechBubble.style.background = '#66FF99';
     // hideTimerBar();
     // hideSpeechBubble();
   } else {
+    isMatchingKeyPressed = false;
     speechBubble.style.background = '#DC143C';
   }
   hideTimerBar();
   hideSpeechBubble();
-  setTimeout(() => {
-    displayRandomImage();
-  }, 1000);
+
+  // setTimeout(() => {
+  //   displayRandomImage();
+  // }, 500); //this proably should generate on keyup
 });
 
 document.addEventListener('keyup', () => {
