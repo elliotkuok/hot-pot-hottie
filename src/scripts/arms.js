@@ -1,7 +1,7 @@
-const arms = document.getElementById('arms');
+const arm = document.getElementById('right-arm');
 const dateArms = document.getElementById('date-arms');
 
-function moveArmsToNewPosition(keyPressed) {
+function moveArmToNewPosition(keyPressed) {
   // Define the new position for the arms based on the key pressed
   let newX = 0;
   let newY = 0;
@@ -45,13 +45,13 @@ function moveArmsToNewPosition(keyPressed) {
   }
 
   // Call the animation function to update the arms' position smoothly
-  animateArms(newX, newY);
+  animateArm(newX, newY);
 }
 
-function animateArms(targetX, targetY) {
+function animateArm(targetX, targetY) {
   // Get the current position of the arms
-  const currentX = parseFloat(arms.style.left) || 0;
-  const currentY = parseFloat(arms.style.top) || 0;
+  const currentX = parseFloat(arm.style.left) || 0;
+  const currentY = parseFloat(arm.style.top) || 0;
 
   // Calculate the distance to move in each frame
   const distanceX = targetX - currentX;
@@ -78,8 +78,8 @@ function animateArms(targetX, targetY) {
     const newY = currentY + distanceY * progress;
 
     // Update the position of the arms
-    arms.style.left = `${newX}px`;
-    arms.style.top = `${newY}px`;
+    arm.style.left = `${newX}px`;
+    arm.style.top = `${newY}px`;
     // dateArms.style.left = `${newX}px`;
     // dateArms.style.top = `${newY}px`;
 
@@ -95,4 +95,4 @@ function animateArms(targetX, targetY) {
 }
 
 // Export the moveArmsToNewPosition function to use it in other files
-export default moveArmsToNewPosition;
+export default moveArmToNewPosition;

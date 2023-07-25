@@ -1,4 +1,4 @@
-import moveArmsToNewPosition from './arms.js';
+import moveArmToNewPosition from './arms.js';
 
 const circle = document.querySelector('.circle');
 const meterWidth = 300;
@@ -27,8 +27,8 @@ function stopMovingCircle() {
   cancelAnimationFrame(animationId);
   const displayedImageKey = document.querySelector('#speech-bubble img').dataset.key;
   setTimeout(() => {
-    moveArmsToNewPosition(displayedImageKey);
-  }, 500);
+    moveArmToNewPosition(displayedImageKey);
+  }, 500); // making the animation run async
 }
 
 document.addEventListener('keydown', (event) => {
@@ -36,7 +36,7 @@ document.addEventListener('keydown', (event) => {
   const displayedImageKey = document.querySelector('#speech-bubble img').dataset.key;
   if (keyPressed === displayedImageKey) {
     stopMovingCircle();
-    // moveArmsToNewPosition(keyPressed); //only if nt async
+    // moveArmToNewPosition(keyPressed); //only if not async
   }
 });
 
