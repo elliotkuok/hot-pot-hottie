@@ -4,4 +4,5 @@ img#hotpot {
     height: 200px;
     position: absolute;
     top: 110px;
+    transform: rotate(90deg);
 }
