@@ -51,6 +51,14 @@ function getRandomImageKey() {
     // Call updateTimerBar every timerInterval (10ms)
     timerId = setInterval(updateTimerBar, timerInterval);
 }
+
+function hideTimerBar() {
+  const speechBubble = document.getElementById('speech-bubble');
+  const timerBar = speechBubble.querySelector('.timer-bar');
+  if (timerBar) {
+    timerBar.style.display = 'none';
+  }
+}
   
 // Function to display the selected image in the speech-bubble div
 function displayRandomImage() {
@@ -73,7 +81,9 @@ function displayRandomImage() {
 // Function to hide the speech-bubble div
 function hideSpeechBubble() {
   const speechBubble = document.getElementById('speech-bubble');
-  speechBubble.style.display = 'none';
+  setTimeout(() => {
+    speechBubble.style.display = 'none';
+  }, 1000);
 }
 
 function showSpeechBubble() {
@@ -92,9 +102,19 @@ displayRandomImage();
 document.addEventListener('keydown', (event) => {
   const keyPressed = event.key;
   const displayedImageKey = document.querySelector('#speech-bubble img').dataset.key;
+  const speechBubble = document.getElementById('speech-bubble');
   if (keyPressed === displayedImageKey) {
-    hideSpeechBubble();
+    speechBubble.style.background = '#66FF99';
+    // hideTimerBar();
+    // hideSpeechBubble();
+  } else {
+    speechBubble.style.background = '#DC143C';
   }
+  hideTimerBar();
+  hideSpeechBubble();
+  setTimeout(() => {
+    displayRandomImage();
+  }, 1000);
 });
 
 document.addEventListener('keyup', () => {
