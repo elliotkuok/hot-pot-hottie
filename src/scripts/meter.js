@@ -29,6 +29,11 @@ function moveCircle() {
 
 function stopMovingCircle() {
   cancelAnimationFrame(animationId);
+  const circleLeftPosition = parseFloat(circle.style.left);
+  if (circleLeftPosition < 125 || circleLeftPosition > 160) {
+    const displayedImageKey = document.querySelector('#speech-bubble img').dataset.key;
+    showX(displayedImageKey);
+  }
   // const displayedImageKey = document.querySelector('#speech-bubble img').dataset.key;
   // setTimeout(() => {
   //   moveArmToNewPosition(displayedImageKey);

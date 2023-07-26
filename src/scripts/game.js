@@ -57,7 +57,7 @@ document.addEventListener('keyup', (event) => {
   }
   keyPressedSinceLastX = true;
   isKeyDown = false;
-  showX();
+  // showX();
 });
 
 
