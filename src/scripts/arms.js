@@ -1,7 +1,7 @@
 const arm = document.getElementById('right-arm');
 const dateArms = document.getElementById('date-arms');
 
-function moveArmToNewPosition(keyPressed) {
+function moveArmToFood(keyPressed) {
   // Define the new position for the arms based on the key pressed
   let newX = 200;
   let newY = 250;
@@ -99,9 +99,9 @@ document.addEventListener('keydown', (event) => {
   const keyPressed = event.key;
   const displayedImageKey = document.querySelector('#speech-bubble img').dataset.key;
   if (keyPressed === displayedImageKey) {
-    moveArmToNewPosition(keyPressed)
+    moveArmToFood(keyPressed)
   }
 });
 
 // Export the moveArmsToNewPosition function to use it in other files
-export default moveArmToNewPosition;
+export default moveArmToFood;

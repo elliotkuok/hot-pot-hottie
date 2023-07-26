@@ -1,4 +1,4 @@
-import moveArmToNewPosition from './arms.js';
+import moveArmToFood from './arms.js';
 
 const circle = document.querySelector('.circle');
 const meterWidth = 300;
