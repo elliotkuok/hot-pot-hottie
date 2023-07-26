@@ -92,9 +92,6 @@ function hideSpeechBubble() {
   setTimeout(() => {
     speechBubble.style.display = 'none';
     isMatchingKeyPressed = false; // Reset the variable when the timer ends
-    setTimeout(() => {
-      showSpeechBubble();
-    }, 2000);
   }, 500);
 }
 
@@ -127,7 +124,7 @@ document.addEventListener('keydown', (event) => {
 
 document.addEventListener('keyup', () => {
   // add animation response of putting food into pot
-  // showSpeechBubble();
+  showSpeechBubble();
   // displayRandomImage();
 });
 
