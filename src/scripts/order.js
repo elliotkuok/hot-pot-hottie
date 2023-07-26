@@ -92,20 +92,26 @@ function hideSpeechBubble() {
   setTimeout(() => {
     speechBubble.style.display = 'none';
     isMatchingKeyPressed = false; // Reset the variable when the timer ends
+    setTimeout(() => {
+      showSpeechBubble();
+    }, 2000);
   }, 500);
 }
 
 function showSpeechBubble() {
-  const speechBubble = document.getElementById('speech-bubble');
-  speechBubble.style.background = 'white';
-  displayRandomImage();
-  speechBubble.style.display = 'block';
+  if (!isKeyPressed) {
+    const speechBubble = document.getElementById('speech-bubble');
+    speechBubble.style.background = 'white';
+    displayRandomImage();
+    speechBubble.style.display = 'block';
+  }
 }
 
 // Call the displayRandomImage function to show the initial random image
 displayRandomImage();
 
 let isMatchingKeyPressed = false;
+let isKeyPressed = false;
 
 document.addEventListener('keydown', (event) => {
   const keyPressed = event.key;
@@ -114,17 +120,26 @@ document.addEventListener('keydown', (event) => {
 
   if (keyPressed === displayedImageKey) {
     isMatchingKeyPressed = true;
+    isKeyPressed = true;
     speechBubble.style.background = '#66FF99';
   } else {
+    isKeyPressed = true;
     isMatchingKeyPressed = false;
     speechBubble.style.background = '#DC143C';
   }
   hideTimerBar();
 });
 
-document.addEventListener('keyup', () => {
-  // add animation response of putting food into pot
+document.addEventListener('keyup', (event) => {
+  const keyLifted = event.key;
+  const displayedImageKey = document.querySelector('#speech-bubble img').dataset.key;
+  if (keyLifted === displayedImageKey) {
+    isMatchingKeyPressed = false;
+  }
+  isKeyPressed = false; 
   showSpeechBubble();
+  // add animation response of putting food into pot
+
   // displayRandomImage();
 });
 
