@@ -6,6 +6,7 @@ let animationId;
 let currentPosition = 0;
 let moveSpeed = 2; // Setting to 3 for now but remember to change
 let moveDirection = 'right';
+let isCircleInDesiredRange = false;
 
 function moveCircle() {
   if (moveDirection === 'right') {
@@ -15,6 +16,8 @@ function moveCircle() {
   }
 
   circle.style.left = `${currentPosition}px`;
+
+  isCircleInDesiredRange = currentPosition >= 125 && currentPosition <= 160;
 
   if (currentPosition >= meterWidth - circle.clientWidth || currentPosition <= 0) {
     moveDirection = moveDirection === 'right' ? 'left' : 'right';
@@ -36,6 +39,16 @@ function displayMeter() {
   meter.style.display = 'block';
 }
 
+function turnMeterGreen() {
+  if (isCircleInDesiredRange) {
+    const progressBar = document.querySelector('.progress');
+    progressBar.style.background = 'green';
+    setTimeout(() => {
+      meter.style.display = 'none';
+    }, 500);
+  }
+}
+
 document.addEventListener('keydown', (event) => {
   const keyPressed = event.key;
   const displayedImageKey = document.querySelector('#speech-bubble img').dataset.key;
@@ -47,9 +60,7 @@ document.addEventListener('keydown', (event) => {
 
 document.addEventListener('keyup', () => {
   stopMovingCircle();
-  // add animation response of putting food into pot
-  // showSpeechBubble();
-  // displayRandomImage();
+  turnMeterGreen()
 });
 
 moveCircle();
