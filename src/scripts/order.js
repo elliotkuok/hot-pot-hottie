@@ -137,7 +137,9 @@ document.addEventListener('keyup', (event) => {
     isMatchingKeyPressed = false;
   }
   isKeyPressed = false; 
-  showSpeechBubble();
+  setTimeout(() => {
+    showSpeechBubble();
+  }, 2000);
   // add animation response of putting food into pot
 
   // displayRandomImage();

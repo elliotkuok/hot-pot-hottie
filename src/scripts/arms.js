@@ -2,50 +2,58 @@ const arm = document.getElementById('right-arm');
 const dateArms = document.getElementById('date-arms');
 
 function moveArmToFood(keyPressed) {
-  // Define the new position for the arms based on the key pressed
-  let newX = 200;
-  let newY = 250;
+  const circle = document.querySelector('.circle');
+  const circleLeftPosition = parseFloat(circle.style.left) || 0;
 
-  switch (keyPressed) {
-    case 'w': // Sausage
-      newX = -150;
-      newY = 250;
-      break;
-    case 'a': // Mushroom
-      newX = -150;
-      newY = 250;
-      break;
-    case 's': // Shrimp
-      newX = -150;
-      newY = 250;
-      break;
-    case 'd': // Fishball
-      newX = -150;
-      newY = 250;
-      break;
-    case 'ArrowUp': // Meatball
-      newX = -150;
-      newY = 250;
-      break;
-    case 'ArrowLeft': // Dumpling
-      newX = -150;
-      newY = 250;
-      break;
-    case 'ArrowDown': // Bokchoy
-      newX = -150;
-      newY = 250;
-      break;
-    case 'ArrowRight': // Tofu
-      newX = -150;
-      newY = 250;
-      break;
-    default:
-      // If the key doesn't match any food item, don't move the arms
-      return;
+  // Check if the circle position is within the range (125px to 160px)
+  if (circleLeftPosition >= 125 && circleLeftPosition <= 160) {
+    moveArmToHotPot();
+  } else {
+    // Define the new position for the arms based on the key pressed
+    let newX;
+    let newY = 250;
+
+    switch (keyPressed) {
+      case 'w': // Sausage
+        newX = -150;
+        newY = 250;
+        break;
+      case 'a': // Mushroom
+        newX = -150;
+        newY = 250;
+        break;
+      case 's': // Shrimp
+        newX = -150;
+        newY = 250;
+        break;
+      case 'd': // Fishball
+        newX = -150;
+        newY = 250;
+        break;
+      case 'ArrowUp': // Meatball
+        newX = -150;
+        newY = 250;
+        break;
+      case 'ArrowLeft': // Dumpling
+        newX = -150;
+        newY = 250;
+        break;
+      case 'ArrowDown': // Bokchoy
+        newX = -150;
+        newY = 250;
+        break;
+      case 'ArrowRight': // Tofu
+        newX = -150;
+        newY = 250;
+        break;
+      default:
+        // If the key doesn't match any food item, don't move the arms
+        return;
+    }
+
+    // Call the animation function to update the arms' position smoothly
+    animateArm(newX, newY);
   }
-
-  // Call the animation function to update the arms' position smoothly
-  animateArm(newX, newY);
 }
 
 function animateArm(targetX, targetY) {
@@ -92,6 +100,21 @@ function animateArm(targetX, targetY) {
 
   // Start the animation by requesting the first frame
   requestAnimationFrame(animationStep);
+}
+
+function moveArmToHotPot() {
+  // Define the new position for the arms to the hot pot position
+  const newX = -50; // Adjust this value based on your desired hot pot position
+  const newY = 250; // Adjust this value based on your desired hot pot position
+
+  const originX = -200; // Adjust this value based on your desired hot pot position
+  const originY = 250;
+  // Call the animation function to update the arms' position smoothly
+  animateArm(newX, newY);
+  setTimeout(() => {
+    
+    animateArm(originX, originY);
+  }, 1500);
 }
 
 
