@@ -1,4 +1,4 @@
-import showX from './game.js';
+import { showX, resetKeyPressedFlag } from './game.js';
 
 const foodItems = {
     sausage: { image: 'sausage.png', key: 'w' },
@@ -16,9 +16,9 @@ function getRandomImageKey() {
     const keys = Object.keys(foodItems);
     const randomIndex = Math.floor(Math.random() * keys.length);
     return keys[randomIndex];
-  }
+}
 
-  function startTimer(duration) {
+function startTimer(duration) {
     let timer = duration;
     const timerInterval = 10; // Update the timer every 10ms
     let timerId;
@@ -79,6 +79,13 @@ function displayRandomImage() {
   speechBubble.innerHTML = ''; // Clear existing content
   speechBubble.appendChild(imageElement);
   startTimer(3);
+
+  resetKeyPressedFlag();
+}
+
+function clearImageFromSpeechBubble() {
+  const speechBubble = document.getElementById('speech-bubble');
+  speechBubble.innerHTML = '';
 }
 
 function hideSpeechBubble() {
@@ -95,10 +102,12 @@ function hideSpeechBubble() {
   setTimeout(() => {
     speechBubble.style.display = 'none';
     isMatchingKeyPressed = false; // Reset the variable when the timer ends
+    clearImageFromSpeechBubble()
     setTimeout(() => {
       showSpeechBubble();
     }, 2000);
   }, 500);
+
 }
 
 function showSpeechBubble() {

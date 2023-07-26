@@ -1,5 +1,5 @@
 import moveArmToFood from './arms.js';
-import showX from './game.js';
+import { showX, resetKeyPressedFlag } from './game.js';
 
 const circle = document.querySelector('.circle');
 const meterWidth = 300;
