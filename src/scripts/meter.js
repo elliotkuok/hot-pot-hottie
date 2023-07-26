@@ -31,13 +31,25 @@ function stopMovingCircle() {
   }, 500); // making the animation run async
 }
 
+function displayMeter() {
+  const meter = document.getElementById('meter');
+  meter.style.display = 'block';
+}
+
 document.addEventListener('keydown', (event) => {
   const keyPressed = event.key;
   const displayedImageKey = document.querySelector('#speech-bubble img').dataset.key;
   if (keyPressed === displayedImageKey) {
-    stopMovingCircle();
+    displayMeter();
     // moveArmToNewPosition(keyPressed); //only if not async
   }
+});
+
+document.addEventListener('keyup', () => {
+  stopMovingCircle();
+  // add animation response of putting food into pot
+  // showSpeechBubble();
+  // displayRandomImage();
 });
 
 moveCircle();
