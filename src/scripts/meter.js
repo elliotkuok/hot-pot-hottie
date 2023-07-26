@@ -39,14 +39,27 @@ function displayMeter() {
   meter.style.display = 'block';
 }
 
-function turnMeterGreen() {
+function turnMeterColor() {
+  const progressBar = document.querySelector('.progress');
   if (isCircleInDesiredRange) {
-    const progressBar = document.querySelector('.progress');
     progressBar.style.background = 'green';
-    setTimeout(() => {
-      meter.style.display = 'none';
-    }, 500);
+  } else {
+    progressBar.style.background = 'red';
   }
+  setTimeout(() => {
+    meter.style.display = 'none';
+    resetMeterAnimation();
+  }, 500);
+}
+
+function resetMeterAnimation() {
+  const progressBar = document.querySelector('.progress');
+  const gradientValue = 'linear-gradient(to right, red 35%, green 45%, green 55%, red 65%)';
+
+  progressBar.style.background = gradientValue;
+  currentPosition = 0; // Reset the current position of the circle
+  moveDirection = 'right'; // Reset the direction of movement to right
+  moveCircle(); // Start the meter animation again
 }
 
 document.addEventListener('keydown', (event) => {
@@ -60,7 +73,7 @@ document.addEventListener('keydown', (event) => {
 
 document.addEventListener('keyup', () => {
   stopMovingCircle();
-  turnMeterGreen()
+  turnMeterColor()
 });
 
 moveCircle();
