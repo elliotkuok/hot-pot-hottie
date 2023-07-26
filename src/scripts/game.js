@@ -11,6 +11,8 @@ function showX() {
         missed.innerText = 'X';
         missed.className = 'missed';
         missed.style.position = 'absolute';
+        missed.style.bottom = '-10px';
+        missed.style.color = 'red';
         missed.style.fontFamily = 'Nerko One';
         missed.style.fontSize = '100px';
         gameCanvas.appendChild(missed);
@@ -30,6 +32,9 @@ document.addEventListener('keydown', (event) => {
   // if (keyPressed !== displayedImageKey) {
   //   showX();
   // }
+  if (xCount === 3) {
+    alert("game over")
+  }
 });
 
 document.addEventListener('keyup', () => {
