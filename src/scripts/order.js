@@ -78,15 +78,6 @@ function displayRandomImage() {
   startTimer(3);
 }
 
-// Function to hide the speech-bubble div
-// function hideSpeechBubble() {
-//   const speechBubble = document.getElementById('speech-bubble');
-//   speechBubble.style.background = '#DC143C';
-//   hideTimerBar()
-//   setTimeout(() => {
-//     speechBubble.style.display = 'none';
-//   }, 1000);
-// }
 function hideSpeechBubble() {
   const speechBubble = document.getElementById('speech-bubble');
   const timerBar = speechBubble.querySelector('.timer-bar');
@@ -104,7 +95,7 @@ function hideSpeechBubble() {
     setTimeout(() => {
       showSpeechBubble();
     }, 2000);
-  }, 1000);
+  }, 500);
 }
 
 function showSpeechBubble() {
@@ -117,10 +108,6 @@ function showSpeechBubble() {
 // Call the displayRandomImage function to show the initial random image
 displayRandomImage();
 
-// // Add event listener for keydown event to trigger hiding the speech-bubble div
-// document.addEventListener('keydown', () => {
-//   hideSpeechBubble();
-// });
 let isMatchingKeyPressed = false;
 
 document.addEventListener('keydown', (event) => {
@@ -131,18 +118,11 @@ document.addEventListener('keydown', (event) => {
   if (keyPressed === displayedImageKey) {
     isMatchingKeyPressed = true;
     speechBubble.style.background = '#66FF99';
-    // hideTimerBar();
-    // hideSpeechBubble();
   } else {
     isMatchingKeyPressed = false;
     speechBubble.style.background = '#DC143C';
   }
   hideTimerBar();
-  // hideSpeechBubble();
-
-  // setTimeout(() => {
-    // showSpeechBubble()
-  // }, 500); //this proably should generate on keyup
 });
 
 document.addEventListener('keyup', () => {

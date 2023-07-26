@@ -8,35 +8,35 @@ function moveArmToNewPosition(keyPressed) {
 
   switch (keyPressed) {
     case 'w': // Sausage
-      newX = -100;
+      newX = -150;
       newY = 250;
       break;
     case 'a': // Mushroom
-      newX = -100;
+      newX = -150;
       newY = 250;
       break;
     case 's': // Shrimp
-      newX = -100;
+      newX = -150;
       newY = 250;
       break;
     case 'd': // Fishball
-      newX = -100;
+      newX = -150;
       newY = 250;
       break;
     case 'ArrowUp': // Meatball
-      newX = -100;
+      newX = -150;
       newY = 250;
       break;
     case 'ArrowLeft': // Dumpling
-      newX = -100;
+      newX = -150;
       newY = 250;
       break;
     case 'ArrowDown': // Bokchoy
-      newX = -100;
+      newX = -150;
       newY = 250;
       break;
     case 'ArrowRight': // Tofu
-      newX = -100;
+      newX = -150;
       newY = 250;
       break;
     default:
