@@ -1,10 +1,10 @@
 let xCount = 0;
-// let isKeyDown = false;
+let isKeyDown = false;
 
 function showX() {
   const gameCanvas = document.getElementById('game-canvas');
   let missed = gameCanvas.querySelector('.missed');
-  // if (!isKeyDown) {
+  if (!isKeyDown) {
     if (xCount < 3) {
       if (!missed) {
         missed = document.createElement('div');
@@ -18,23 +18,22 @@ function showX() {
         missed.innerText += 'X';
       }
 
-      // Increment the X count
       xCount++;
     }
-  // } 
+  } 
 }
 
 document.addEventListener('keydown', (event) => {
   const keyPressed = event.key;
   const displayedImageKey = document.querySelector('#speech-bubble img').dataset.key;
-  // isKeyDown = true;
+  isKeyDown = true;
   // if (keyPressed !== displayedImageKey) {
   //   showX();
   // }
 });
 
 document.addEventListener('keyup', () => {
-  // isKeyDown = false;
+  isKeyDown = false;
   // Rest of the code...
 });
 

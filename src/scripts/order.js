@@ -42,7 +42,7 @@ function getRandomImageKey() {
 
         if (timer <= 0) {
             // Hide the speech-bubble when the timer runs out
-            // showX();
+            showX();
             hideSpeechBubble();
             clearInterval(timerId);
         }
