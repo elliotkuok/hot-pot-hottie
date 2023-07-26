@@ -101,11 +101,16 @@ function hideSpeechBubble() {
   setTimeout(() => {
     speechBubble.style.display = 'none';
     isMatchingKeyPressed = false; // Reset the variable when the timer ends
+    setTimeout(() => {
+      showSpeechBubble();
+    }, 2000);
   }, 1000);
 }
 
 function showSpeechBubble() {
   const speechBubble = document.getElementById('speech-bubble');
+  speechBubble.style.background = 'white';
+  displayRandomImage();
   speechBubble.style.display = 'block';
 }
 
@@ -133,10 +138,10 @@ document.addEventListener('keydown', (event) => {
     speechBubble.style.background = '#DC143C';
   }
   hideTimerBar();
-  hideSpeechBubble();
+  // hideSpeechBubble();
 
   // setTimeout(() => {
-  //   displayRandomImage();
+    // showSpeechBubble()
   // }, 500); //this proably should generate on keyup
 });
 

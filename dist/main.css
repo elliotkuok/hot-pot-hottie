@@ -185,6 +185,7 @@ img#hotpot {
     /* transform: translateX(50%); change if #game-canvas align-items: is changed*/ 
     overflow: hidden;
     z-index: 2;
+    display: none;
 }
 
 .progress {
