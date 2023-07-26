@@ -34,7 +34,6 @@ document.addEventListener('keydown', (event) => {
   const displayedImageKey = document.querySelector('#speech-bubble img').dataset.key;
   if (keyPressed !== displayedImageKey) {
     isKeyDown = true;
-    showX();
   }
   if (xCount === 3) {
     alert("game over")
