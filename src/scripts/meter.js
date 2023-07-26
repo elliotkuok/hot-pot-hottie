@@ -1,4 +1,5 @@
 import moveArmToFood from './arms.js';
+import showX from './game.js';
 
 const circle = document.querySelector('.circle');
 const meterWidth = 300;
@@ -45,6 +46,7 @@ function turnMeterColor() {
     progressBar.style.background = 'green';
   } else {
     progressBar.style.background = 'red';
+    showX();
   }
   setTimeout(() => {
     meter.style.display = 'none';
@@ -67,7 +69,8 @@ document.addEventListener('keydown', (event) => {
   const displayedImageKey = document.querySelector('#speech-bubble img').dataset.key;
   if (keyPressed === displayedImageKey) {
     displayMeter();
-    // moveArmToNewPosition(keyPressed); //only if not async
+  } else {
+    showX();
   }
 });
 

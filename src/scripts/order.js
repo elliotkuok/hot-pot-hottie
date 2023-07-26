@@ -1,3 +1,5 @@
+import showX from './game.js';
+
 const foodItems = {
     sausage: { image: 'sausage.png', key: 'w' },
     mushroom: { image: 'mushroom.png', key: 'a' },
@@ -40,6 +42,7 @@ function getRandomImageKey() {
 
         if (timer <= 0) {
             // Hide the speech-bubble when the timer runs out
+            // showX();
             hideSpeechBubble();
             clearInterval(timerId);
         }

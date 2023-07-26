@@ -1,33 +1,42 @@
-class Game {
-    constructor() {
-        
+let xCount = 0;
+// let isKeyDown = false;
+
+function showX() {
+  const gameCanvas = document.getElementById('game-canvas');
+  let missed = gameCanvas.querySelector('.missed');
+  // if (!isKeyDown) {
+    if (xCount < 3) {
+      if (!missed) {
+        missed = document.createElement('div');
+        missed.innerText = 'X';
+        missed.className = 'missed';
+        missed.style.position = 'absolute';
+        missed.style.fontFamily = 'Nerko One';
+        missed.style.fontSize = '100px';
+        gameCanvas.appendChild(missed);
+      } else {
+        missed.innerText += 'X';
+      }
+
+      // Increment the X count
+      xCount++;
     }
-
-    drawHotpotImage() {
-        // const canvas = document.getElementById('tabletop');
-        // const ctx = canvas.getContext('2d');
-
-        // const hotpotImg = new Image();
-        // hotpotImg.src = '/assets/hotpot.png';
-
-        // hotpotImg.onload = () => {
-        //     // Draw the image at coordinates (x, y) on the canvas
-        //     // You can adjust the (x, y) coordinates as needed to position the image on the canvas
-        //     ctx.drawImage(hotpotImg, 50, 50, hotpotImg.width, hotpotImg.height);
-        //   };
-
-        // const hotpot = document.getElementById("hotpot")
-        // const canvas = document.getElementById('tabletop');
-        // const ctx = canvas.getContext('2d');
-
-        // ctx.drawImage(
-        //     hotpot,
-        //         0,0,
-        //         50,50,
-        //         0,0,
-        //         200,200
-        // );
-    }
+  // } 
 }
 
-export default Game;
+document.addEventListener('keydown', (event) => {
+  const keyPressed = event.key;
+  const displayedImageKey = document.querySelector('#speech-bubble img').dataset.key;
+  // isKeyDown = true;
+  // if (keyPressed !== displayedImageKey) {
+  //   showX();
+  // }
+});
+
+document.addEventListener('keyup', () => {
+  // isKeyDown = false;
+  // Rest of the code...
+});
+
+
+export default showX;
