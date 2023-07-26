@@ -25,10 +25,10 @@ function moveCircle() {
 
 function stopMovingCircle() {
   cancelAnimationFrame(animationId);
-  const displayedImageKey = document.querySelector('#speech-bubble img').dataset.key;
-  setTimeout(() => {
-    moveArmToNewPosition(displayedImageKey);
-  }, 500); // making the animation run async
+  // const displayedImageKey = document.querySelector('#speech-bubble img').dataset.key;
+  // setTimeout(() => {
+  //   moveArmToNewPosition(displayedImageKey);
+  // }, 500); // making the animation run async
 }
 
 function displayMeter() {

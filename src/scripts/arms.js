@@ -94,5 +94,14 @@ function animateArm(targetX, targetY) {
   requestAnimationFrame(animationStep);
 }
 
+
+document.addEventListener('keydown', (event) => {
+  const keyPressed = event.key;
+  const displayedImageKey = document.querySelector('#speech-bubble img').dataset.key;
+  if (keyPressed === displayedImageKey) {
+    moveArmToNewPosition(keyPressed)
+  }
+});
+
 // Export the moveArmsToNewPosition function to use it in other files
 export default moveArmToNewPosition;
