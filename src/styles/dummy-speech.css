@@ -14,7 +14,7 @@
     background-color: #4caf50; /* Red color for timer bar */
     border-radius: 5px;
     width: 100%;
-    animation: timerAnimation 2s linear infinite;
+    animation: timerAnimation 3s linear infinite;
   }
   
   #dummy-speech-content {
