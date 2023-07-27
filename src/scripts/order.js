@@ -178,7 +178,9 @@ document.addEventListener('keyup', (event) => {
   }
 
   // Show the speech bubble again
-  showSpeechBubble();
+  setTimeout(() => {
+    showSpeechBubble();
+  }, 2000);
 });
 
 export { displayRandomImage, foodItems }; // Export the function and foodItems hash
