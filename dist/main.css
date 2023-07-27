@@ -413,7 +413,7 @@ body{
   }
   
   a {
-    color:grey;
+    color:#DD2C00;
     text-decoration: none;
   }
   
@@ -428,11 +428,11 @@ body{
   }
   
   .fa-github:hover{
-      color: #FF5722;
+      color: #FFC107;
   }
   
   .fa-linkedin-in:hover {
-      color: #FF5722;
+      color: #FFC107;
   }
   
 /*!*************************************************************************************************************************************!*\
