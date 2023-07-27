@@ -143,7 +143,7 @@ img#table {
 
 #introduction {
     position: fixed;
-    top: 280px;
+    top: 320px;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 9999;
@@ -326,6 +326,50 @@ img#hotpot {
   
   
 
+/*!***********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/dummy-speech.css ***!
+  \***********************************************************************************************************/
+#dummy-speech-bubble {
+    top: 100px; /* Adjust the positioning as needed */
+    left: 100px; /* Adjust the positioning as needed */
+    background-color: #FFF;
+    border: 2px solid #000;
+    border-radius: 10px;
+    width: 90px;
+    margin-top: 20px;
+  }
+  
+  #dummy-timer-bar {
+    height: 10px;
+    background-color: #FF5733; /* Red color for timer bar */
+    border-radius: 5px;
+  }
+  
+  #dummy-speech-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10px;
+  }
+  
+  #dummy-speech-content img {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+  }
+  
+  #dummy-speech-content p {
+    font-family: 'Ubuntu';
+    font-weight: 400;
+    font-size: 16px;
+  }
+  
+  .instruction {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    /* Add other styling as needed */
+  }
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
