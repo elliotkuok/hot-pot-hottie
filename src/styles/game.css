@@ -92,7 +92,7 @@ img#table {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
     /*display: none; put this back */
-    
+    min-width: 710px;
   }
   
   #introduction-content {
