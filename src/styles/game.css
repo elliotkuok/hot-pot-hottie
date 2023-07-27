@@ -83,7 +83,7 @@ img#table {
 
 #introduction {
     position: fixed;
-    top: 250px;
+    top: 280px;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 9999;
@@ -103,6 +103,12 @@ img#table {
   #start-button {
     display: block;
     margin: 20px auto;
+    width: 50%;
+    height: 50px;
+    font-family: 'Ubuntu';
+    background-color: #FF5327;
+    border-radius: 5px;
+    color: white;
   }
 
   #game-description {
