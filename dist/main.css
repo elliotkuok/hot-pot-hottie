@@ -72,12 +72,6 @@ h2 {
   font-size: 50px;
 }
 
-footer {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-}
-
 #canvas-container {
     display: flex;
     justify-content: center;
@@ -261,6 +255,11 @@ img#table {
 #instruction2 img {
   margin-top: 20px;
 }
+
+footer img {
+  width: 50px;
+  margin: 10px;
+}
 /*!*****************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/hotpot.css ***!
   \*****************************************************************************************************/
@@ -404,6 +403,14 @@ img#hotpot {
       width: 0; /* End with width as 100% */
     }
   }
+/*!****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/icons.css ***!
+  \****************************************************************************************************/
+footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/

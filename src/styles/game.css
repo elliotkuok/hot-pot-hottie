@@ -18,12 +18,6 @@ h2 {
   font-size: 50px;
 }
 
-footer {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-}
-
 #canvas-container {
     display: flex;
     justify-content: center;
@@ -206,4 +200,9 @@ img#table {
 
 #instruction2 img {
   margin-top: 20px;
+}
+
+footer img {
+  width: 50px;
+  margin: 10px;
 }
