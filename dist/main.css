@@ -137,7 +137,7 @@ img#table {
 
 #introduction {
     position: fixed;
-    top: 30%;
+    top: 250px;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 9999;
@@ -146,6 +146,7 @@ img#table {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
     /*display: none; put this back */
+    
   }
   
   #introduction-content {
@@ -162,6 +163,25 @@ img#table {
     margin: 20px 0px;
     line-height: 1.5;
     text-align: left;
+  }
+
+  #game-instruction {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #game-instruction > div {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+  }
+
+  #game-instruction p {
+    font-weight: 400;
+  }
+
+  #game-description > p {
+    margin-bottom: 15px;
   }
 /*!*****************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/hotpot.css ***!
