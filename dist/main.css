@@ -406,11 +406,35 @@ img#hotpot {
 /*!****************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/icons.css ***!
   \****************************************************************************************************/
-footer {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
+/* Taken from github user: KPDMadhuka */
+
+body{
+    text-align:center
+  }
+  
+  a {
+    color:grey;
+    text-decoration: none;
+  }
+  
+  i {
+    letter-spacing: 10px;
+    padding: 1cm 5px 1cm 5px;
+    font-size: 49px;
+    transition: all .2s ease-in-out;
+  }
+  i:hover {
+    transform: scale(1.3);
+  }
+  
+  .fa-github:hover{
+      color: #FF5722;
+  }
+  
+  .fa-linkedin-in:hover {
+      color: #FF5722;
+  }
+  
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
