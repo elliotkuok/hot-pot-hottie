@@ -6,9 +6,9 @@ function moveArmToFood(keyPressed) {
   const circleLeftPosition = parseFloat(circle.style.left) || 0;
 
   // Check if the circle position is within the range (125px to 160px)
-  if (circleLeftPosition >= 125 && circleLeftPosition <= 160) {
-    moveArmToHotPot();
-  } else {
+  // if (circleLeftPosition >= 125 && circleLeftPosition <= 160) {
+  //   moveArmToHotPot();
+  // } else {
     // Define the new position for the arms based on the key pressed
     let newX;
     let newY = 250;
@@ -53,7 +53,7 @@ function moveArmToFood(keyPressed) {
 
     // Call the animation function to update the arms' position smoothly
     animateArm(newX, newY);
-  }
+  
 }
 
 function animateArm(targetX, targetY) {
@@ -103,17 +103,17 @@ function animateArm(targetX, targetY) {
 }
 
 function moveArmToHotPot() {
+  const currentX = parseFloat(arm.style.left) || -200;
+  const currentY = parseFloat(arm.style.top) || 250;
   // Define the new position for the arms to the hot pot position
   const newX = -50; // Adjust this value based on your desired hot pot position
   const newY = 250; // Adjust this value based on your desired hot pot position
 
-  const originX = -200; // Adjust this value based on your desired hot pot position
-  const originY = 250;
   // Call the animation function to update the arms' position smoothly
   animateArm(newX, newY);
   setTimeout(() => {
     
-    animateArm(originX, originY);
+    animateArm(currentX, currentY, newX, newY);
   }, 1500);
 }
 
@@ -123,6 +123,14 @@ document.addEventListener('keydown', (event) => {
   const displayedImageKey = document.querySelector('#speech-bubble img').dataset.key;
   if (keyPressed === displayedImageKey) {
     moveArmToFood(keyPressed)
+  }
+});
+
+document.addEventListener('keyup', (event) => {
+  const keyPressed = event.key;
+  const displayedImageKey = document.querySelector('#speech-bubble img').dataset.key;
+  if (keyPressed === displayedImageKey) {
+    moveArmToHotPot()
   }
 });
 
