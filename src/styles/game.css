@@ -7,6 +7,11 @@ p {
     font-weight: 200
 }
 
+em {
+  /* text-decoration: underline; */
+  font-style: italic;
+}
+
 h2 {
   font-family: 'Nerko One';
   color: #DD2C00;
@@ -161,7 +166,7 @@ img#table {
 
 .modal-content {
   background-color: #fff;
-  padding: 20px;
+  padding: 40px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   text-align: center;

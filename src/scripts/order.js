@@ -60,7 +60,7 @@ function hideTimerBar() {
   const speechBubble = document.getElementById('speech-bubble');
   const timerBar = speechBubble.querySelector('.timer-bar');
   if (timerBar) {
-    timerBar.style.display = 'none';
+    timerBar.style.visibility = 'hidden';
   }
 }
   
