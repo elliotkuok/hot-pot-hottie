@@ -31,6 +31,14 @@ function resetKeyPressedFlag() {
   isMatchingKeyPressed = false;
 }
 
+function hideIntroduction() {
+  const introductionDiv = document.getElementById('introduction');
+  introductionDiv.style.display = 'none';
+}
+
+const startButton = document.getElementById('start-button');
+startButton.addEventListener('click', hideIntroduction);
+
 document.addEventListener('keydown', (event) => {
   const keyPressed = event.key;
   const displayedImageKey = document.querySelector('#speech-bubble img').dataset.key;
