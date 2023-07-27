@@ -69,7 +69,7 @@ function displayRandomImage() {
   const speechBubble = document.getElementById('speech-bubble');
   const imageKey = getRandomImageKey();
   const imageName = foodItems[imageKey].image;
-  const imageSrc = `/assets/food-icons/${imageName}`;
+  const imageSrc = `assets/food-icons/${imageName}`;
 
   const imageElement = document.createElement('img');
   imageElement.src = imageSrc;
