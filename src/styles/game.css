@@ -185,3 +185,14 @@ img#table {
 #play-again-button:hover {
   background-color: #FF5733;
 } 
+
+#instruction1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  /* Add other styling as needed */
+}
+
+#instruction2 img {
+  margin-top: 20px;
+}

@@ -6,12 +6,15 @@
     border-radius: 10px;
     width: 90px;
     margin-top: 20px;
+    overflow: hidden;
   }
   
   #dummy-timer-bar {
-    height: 10px;
-    background-color: #FF5733; /* Red color for timer bar */
+    height: 5px;
+    background-color: #4caf50; /* Red color for timer bar */
     border-radius: 5px;
+    width: 100%;
+    animation: timerAnimation 2s linear infinite;
   }
   
   #dummy-speech-content {
@@ -22,9 +25,9 @@
   }
   
   #dummy-speech-content img {
-    width: 60px;
-    height: 60px;
+    width: 50px;
     margin-right: 10px;
+    margin-top: 10px;
   }
   
   #dummy-speech-content p {
@@ -38,4 +41,13 @@
     flex-direction: column;
     align-items: center; /* Center items horizontally */
     /* Add other styling as needed */
+  }
+
+  @keyframes timerAnimation {
+    0% {
+      width: 100%; /* Start with width as 0 */
+    }
+    100% {
+      width: 0; /* End with width as 100% */
+    }
   }

@@ -30,7 +30,7 @@ Implementation Timeline:
 
 - Monday: Dedicate this day to implementing the core game logic. Handle keyboard events and manage the timing of key presses and releases for dropping food into the hotpot correctly. Food Prompt: Display speech bubbles with random food items that players need to type the corresponding keys for. Hotpot Interaction: Make sure that when players successfully drop food into the hotpot, it updates the hotpot's appearance accordingly. Basic Gameplay: Test the basic gameplay mechanics to ensure the correct functioning of key presses, food dropping, and hotpot interactions.
 
-- Tuesday: Ensure that food items are correctly rendered on the canvas and that they rerender appropriately when advancing the game state. User Controls: Implement start, stop, and reset buttons to control the game flow. Click Interaction: Allow players to click on food items directly to drop them into the hotpot if they prefer mouse interactions.
+- Tuesday: Ensure that food items are correctly rendered on the canvas and that they rerender appropriately when advancing the game state. User Controls: Implement start, stop, and reset buttons to control the game flow. 
 
 - Wednesday: Focus on styling the entire game interface, including the hotpot, food items, and speech bubbles, to enhance the visual appeal. Final Tests to identify and fix any remaining bugs or issues for MVP.
 
@@ -40,13 +40,4 @@ Bonus features if time permits:
     - Text bubbles with reactions from the date
     - Practice your skills before your date arrives
 
-
-Notes for implementation:
-Get the Javascript objects and classes set up, render somethign to the page and then start adding functionality
-
-make food class > general behavior (can be picked up, can be dropped)
-
-what are the building block picees, what behaviour they need, how they interact 
-
-take in a sprite file and then canvas can draw it for you in 
 
