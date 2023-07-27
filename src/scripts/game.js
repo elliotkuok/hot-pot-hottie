@@ -1,3 +1,5 @@
+import { displayRandomImage } from './order.js';
+
 let xCount = 0;
 let isKeyDown = false;
 let keyPressedSinceLastX = true;
@@ -36,8 +38,13 @@ function hideIntroduction() {
   introductionDiv.style.display = 'none';
 }
 
+function startGame() {
+  hideIntroduction(); // Hide the introduction when the game starts
+  displayRandomImage();
+}
+
 const startButton = document.getElementById('start-button');
-startButton.addEventListener('click', hideIntroduction);
+startButton.addEventListener('click', startGame);
 
 document.addEventListener('keydown', (event) => {
   const keyPressed = event.key;

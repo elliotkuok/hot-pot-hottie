@@ -121,7 +121,7 @@ function showSpeechBubble() {
 }
 
 // Call the displayRandomImage function to show the initial random image
-displayRandomImage();
+// displayRandomImage();
 
 let isMatchingKeyPressed = false;
 let isKeyPressed = false;
