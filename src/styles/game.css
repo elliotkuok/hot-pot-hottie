@@ -21,8 +21,8 @@ p {
 
 h1 {
     font-family: 'Bungee Spice';
-    font-size: 60px;
-    color: #B1301D;
+    font-size: 70px;
+    color: #DD2C00;
     /* color: #FF5327; */
 }
 
@@ -106,7 +106,7 @@ img#table {
     width: 50%;
     height: 50px;
     font-family: 'Ubuntu';
-    background-color: #FF5327;
+    background-color: #FF5722;
     border-radius: 5px;
     color: white;
   }

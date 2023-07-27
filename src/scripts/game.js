@@ -14,10 +14,10 @@ function showX() {
         missed.innerText = 'X';
         missed.className = 'missed';
         missed.style.position = 'absolute';
-        missed.style.bottom = '-10px';
-        missed.style.color = 'red';
+        missed.style.bottom = '5px';
+        missed.style.color = '#DD2C00';
         missed.style.fontFamily = 'Nerko One';
-        missed.style.fontSize = '100px';
+        missed.style.fontSize = '60px';
         gameCanvas.appendChild(missed);
       } else {
         missed.innerText += 'X';

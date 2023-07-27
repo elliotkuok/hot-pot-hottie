@@ -97,7 +97,7 @@ function hideSpeechBubble() {
   }
   
   if (!isMatchingKeyPressed) {
-    speechBubble.style.background = '#DC143C'; // Turn background red only if the matching key wasn't pressed
+    speechBubble.style.background = '#DD2C00'; // Turn background red only if the matching key wasn't pressed
   }
   
   setTimeout(() => {
@@ -139,7 +139,7 @@ document.addEventListener('keydown', (event) => {
   } else {
     isKeyPressed = true;
     isMatchingKeyPressed = false;
-    speechBubble.style.background = '#DC143C';
+    speechBubble.style.background = '#DD2C00';
   }
   hideTimerBar();
 });

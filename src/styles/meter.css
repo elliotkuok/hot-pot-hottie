@@ -1,7 +1,7 @@
 #meter {
     width: 300px;
     height: 15px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     position: absolute;
     top: 30px; /* Adjust the distance from the bottom */
     /* transform: translateX(50%); change if #game-canvas align-items: is changed*/ 
@@ -13,8 +13,8 @@
 .progress {
     height:100%;
     width:100%;
-    /* border:2px solid #000; */
-    background: linear-gradient(to right, red 35%, green 45%, green 55%, red 65%);
+    /* border:1px solid #000; */
+    background: linear-gradient(to right, #DD2C00 35%, #66FF99 45%, #66FF99 55%, #DD2C00 65%);
 }
 
 .circle {

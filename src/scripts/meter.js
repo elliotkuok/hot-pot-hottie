@@ -49,9 +49,10 @@ function displayMeter() {
 function turnMeterColor() {
   const progressBar = document.querySelector('.progress');
   if (isCircleInDesiredRange) {
-    progressBar.style.background = 'green';
+    progressBar.style.background = '#66FF99';
+    progressBar.style.border = 'yellow';
   } else {
-    progressBar.style.background = 'red';
+    progressBar.style.background = '#DD2C00';
     showX();
   }
   setTimeout(() => {
@@ -62,7 +63,7 @@ function turnMeterColor() {
 
 function resetMeterAnimation() {
   const progressBar = document.querySelector('.progress');
-  const gradientValue = 'linear-gradient(to right, red 35%, green 45%, green 55%, red 65%)';
+  const gradientValue = 'linear-gradient(to right, #DD2C00 35%, #66FF99 45%, #66FF99 55%, #DD2C00 65%)';
 
   progressBar.style.background = gradientValue;
   currentPosition = 0; // Reset the current position of the circle
