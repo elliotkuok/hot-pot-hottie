@@ -419,7 +419,7 @@ body{
   
   i {
     letter-spacing: 10px;
-    padding: 1cm 5px 1cm 5px;
+    padding: .5cm 5px 1cm 5px;
     font-size: 49px;
     transition: all .2s ease-in-out;
   }
