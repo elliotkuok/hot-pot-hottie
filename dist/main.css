@@ -134,6 +134,27 @@ img#table {
     padding: 5px 20px ;
 }
 
+#introduction {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    display: none;/* put this back */
+  }
+  
+  #introduction-content {
+    text-align: center;
+  }
+  
+  #start-button {
+    display: block;
+    margin: 20px auto;
+  }
 /*!*****************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/hotpot.css ***!
   \*****************************************************************************************************/
