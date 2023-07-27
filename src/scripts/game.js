@@ -43,8 +43,34 @@ function startGame() {
   displayRandomImage();
 }
 
+function showGameOverModal() {
+  const modal = document.getElementById('game-over-modal');
+  modal.style.display = 'flex';
+}
+
+function hideGameOverModal() {
+  const modal = document.getElementById('game-over-modal');
+  modal.style.display = 'none';
+}
+
+function restartGame() {
+  xCount = 0; // Reset xCount to 0
+  // Hide any existing "X" divs on the screen
+  const gameCanvas = document.getElementById('game-canvas');
+  const missedDivs = gameCanvas.querySelectorAll('.missed');
+  missedDivs.forEach((div) => div.remove());
+  // Call displayRandomImage to start a new game
+  displayRandomImage();
+}
+
 const startButton = document.getElementById('start-button');
 startButton.addEventListener('click', startGame);
+
+const playAgainButton = document.getElementById('play-again-button');
+playAgainButton.addEventListener('click', () => {
+  hideGameOverModal();
+  restartGame();
+});
 
 document.addEventListener('keydown', (event) => {
   const keyPressed = event.key;
@@ -55,7 +81,7 @@ document.addEventListener('keydown', (event) => {
     isMatchingKeyPressed = true;
   }
   if (xCount === 3) {
-    alert("game over")
+    showGameOverModal();
   }
 });
 
