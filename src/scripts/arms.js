@@ -2,6 +2,7 @@ const arm = document.getElementById('right-arm');
 const dateArms = document.getElementById('date-arms');
 
 function moveArmToFood(keyPressed) {
+  if (!isGameStarted) return; 
   const circle = document.querySelector('.circle');
   const circleLeftPosition = parseFloat(circle.style.left) || 0;
 
@@ -119,6 +120,7 @@ function moveArmToHotPot() {
 
 
 document.addEventListener('keydown', (event) => {
+  if (!isGameStarted) return;
   const keyPressed = event.key;
   const displayedImageKey = document.querySelector('#speech-bubble img').dataset.key;
   if (keyPressed === displayedImageKey) {

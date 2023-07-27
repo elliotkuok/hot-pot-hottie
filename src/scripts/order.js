@@ -121,12 +121,13 @@ function showSpeechBubble() {
 }
 
 // Call the displayRandomImage function to show the initial random image
-displayRandomImage();
+// displayRandomImage();
 
 let isMatchingKeyPressed = false;
 let isKeyPressed = false;
 
 document.addEventListener('keydown', (event) => {
+  if (!isGameStarted) return;
   const keyPressed = event.key;
   const displayedImageElement = document.querySelector('#speech-bubble img');
   const displayedImageKey = displayedImageElement ? displayedImageElement.dataset.key : null;
@@ -155,7 +156,7 @@ document.addEventListener('keyup', (event) => {
   // if (keyLifted === displayedImageKey) {
   //   isMatchingKeyPressed = false;
   // }
-
+  if (!isGameStarted) return;
   const keyLifted = event.key;
   const displayedImageElement = document.querySelector('#speech-bubble img');
 

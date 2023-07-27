@@ -1,3 +1,5 @@
+import { displayRandomImage } from './order.js';
+
 let xCount = 0;
 let isKeyDown = false;
 let keyPressedSinceLastX = true;
@@ -36,8 +38,42 @@ function hideIntroduction() {
   introductionDiv.style.display = 'none';
 }
 
+function startGame() {
+  hideIntroduction(); // Hide the introduction when the game starts
+  displayRandomImage();
+  // document.addEventListener('keydown', (event) => {
+  //   const keyPressed = event.key;
+  //   const displayedImageKey = document.querySelector('#speech-bubble img').dataset.key;
+  //   if (keyPressed !== displayedImageKey) {
+  //     isKeyDown = true;
+  //   } else if (keyPressed === displayedImageKey) {
+  //     isMatchingKeyPressed = true;
+  //   }
+  //   if (xCount === 3) {
+  //     alert("game over")
+  //   }
+  // });
+
+  // document.addEventListener('keyup', (event) => {
+  //   // isKeyDown = false;
+  //   // keyPressedSinceLastX = true;
+  //   // Rest of the code...
+  
+  //   const keyLifted = event.key;
+  //   const displayedImageKey = document.querySelector('#speech-bubble img').dataset.key;
+    
+  //   if (keyLifted === displayedImageKey) {
+  //     isMatchingKeyPressed = false;
+  //   }
+  //   keyPressedSinceLastX = true;
+  //   isKeyDown = false;
+  //   // showX();
+  // });
+}
+
+
 const startButton = document.getElementById('start-button');
-startButton.addEventListener('click', hideIntroduction);
+startButton.addEventListener('click', startGame);
 
 document.addEventListener('keydown', (event) => {
   const keyPressed = event.key;

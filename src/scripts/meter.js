@@ -8,6 +8,7 @@ let currentPosition = 0;
 let moveSpeed = 2; // Setting to 3 for now but remember to change
 let moveDirection = 'right';
 let isCircleInDesiredRange = false;
+let isGameStarted = false;
 
 function moveCircle() {
   if (moveDirection === 'right') {
@@ -70,7 +71,21 @@ function resetMeterAnimation() {
   moveCircle(); // Start the meter animation again
 }
 
+function startGame() {
+  // Hide the introduction and start the game when the button is clicked
+  const introductionDiv = document.getElementById('introduction');
+  introductionDiv.style.display = 'none';
+  isGameStarted = true;
+  moveCircle(); // Start the meter animation
+
+  // Add other initialization code for the game, if needed
+}
+
+const startButton = document.getElementById('start-button');
+startButton.addEventListener('click', startGame);
+
 document.addEventListener('keydown', (event) => {
+  if (!isGameStarted) return;
   const keyPressed = event.key;
   const displayedImageKey = document.querySelector('#speech-bubble img').dataset.key;
   if (keyPressed === displayedImageKey) {
@@ -81,6 +96,7 @@ document.addEventListener('keydown', (event) => {
 });
 
 document.addEventListener('keyup', () => {
+  if (!isGameStarted) return; 
   stopMovingCircle();
   turnMeterColor()
 });
