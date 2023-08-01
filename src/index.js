@@ -29,9 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
       speechBubble.style.background = '#DD2C00';
     }
     hideTimerBar();
-    if (xCount === 3) {
-        showGameOverModal();
-    }
   });
 
   document.addEventListener('keyup', (event) => {
@@ -56,8 +53,10 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimerId(null);
     }
 
-    setTimeout(() => {
-        showSpeechBubble();
-      }, 2000);
+    if (xCount < 3) {
+        setTimeout(() => {
+            showSpeechBubble();
+        }, 1000);
+      }
   });
 });

@@ -32,13 +32,12 @@ function stopMovingCircle() {
   const circleLeftPosition = parseFloat(circle.style.left);
   const displayedImageKey = document.querySelector('#speech-bubble img')?.dataset?.key ?? '';
   if (circleLeftPosition < 125 || circleLeftPosition > 160) {
-    // const displayedImageKey = document.querySelector('#speech-bubble img').dataset.key;
-    showX(displayedImageKey);
+    isCircleInDesiredRange = false;
+    showX();
+  } else {
+    isCircleInDesiredRange = true;
   }
-  // const displayedImageKey = document.querySelector('#speech-bubble img').dataset.key;
-  // setTimeout(() => {
-  //   moveArmToNewPosition(displayedImageKey);
-  // }, 500); // making the animation run async
+ 
 }
 
 function displayMeter() {

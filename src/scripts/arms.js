@@ -103,18 +103,25 @@ function animateArm(targetX, targetY) {
 }
 
 function moveArmToHotPot() {
-  const currentX = parseFloat(arm.style.left) || -200;
-  const currentY = parseFloat(arm.style.top) || 250;
-  // Define the new position for the arms to the hot pot position
-  const newX = -50; // Adjust this value based on your desired hot pot position
-  const newY = 250; // Adjust this value based on your desired hot pot position
+  const circle = document.querySelector('.circle');
+  const circleLeftPosition = parseFloat(circle.style.left) || 0;
 
-  // Call the animation function to update the arms' position smoothly
-  animateArm(newX, newY);
-  setTimeout(() => {
+  if (circleLeftPosition >= 125 && circleLeftPosition <= 160) {
+  
     
-    animateArm(currentX, currentY, newX, newY);
-  }, 1500);
+    const currentX = parseFloat(arm.style.left) || -200;
+    const currentY = parseFloat(arm.style.top) || 250;
+    // Define the new position for the arms to the hot pot position
+    const newX = -50; // Adjust this value based on your desired hot pot position
+    const newY = 250; // Adjust this value based on your desired hot pot position
+    
+    // Call the animation function to update the arms' position smoothly
+    animateArm(newX, newY);
+    setTimeout(() => {
+      
+      animateArm(currentX, currentY, newX, newY);
+    }, 1500);
+  }
 }
 
 

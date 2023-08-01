@@ -43,9 +43,16 @@ function startTimer(duration) {
         if (timer <= 0) {
             // Hide the speech-bubble when the timer runs out
             showX();
-            hideSpeechBubble();
+            speechBubble.style.background = '#DD2C00';
+            timerBar.style.background = '#DD2C00';
+            setTimeout(() => {
+              hideSpeechBubble();
+            }, 1000);
             clearInterval(timerId);
             timerId = null;
+            setTimeout(() => {
+              showSpeechBubble();
+            }, 2000);
         }
         timer -= timerInterval / 1000;
     }
@@ -105,22 +112,14 @@ function hideSpeechBubble() {
   if (timerBar) {
     timerBar.style.display = 'none';
   }
+  speechBubble.style.display = 'none';
+  isMatchingKeyPressed = false; // Reset the variable when the timer ends
   
-  if (!isMatchingKeyPressed) {
-    speechBubble.style.background = '#DD2C00'; // Turn background red only if the matching key wasn't pressed
-  }
-  
-  setTimeout(() => {
-    speechBubble.style.display = 'none';
-    isMatchingKeyPressed = false; // Reset the variable when the timer ends
-    clearImageFromSpeechBubble()
-    setTimeout(() => {
-      showSpeechBubble();
-    }, 2000);
-  }, 500);
 }
 
+
 function showSpeechBubble() {
+  clearImageFromSpeechBubble()
   if (!isKeyPressed) {
     const speechBubble = document.getElementById('speech-bubble');
     speechBubble.style.background = 'white';

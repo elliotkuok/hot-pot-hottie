@@ -37,6 +37,9 @@ function showX() {
 
       xCount++;
       keyPressedSinceLastX = false;
+      if (xCount === 3) {
+        showGameOverModal();
+      }
   }
 }
 
