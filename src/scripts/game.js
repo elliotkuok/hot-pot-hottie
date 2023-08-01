@@ -5,6 +5,18 @@ let isKeyDown = false;
 let keyPressedSinceLastX = true;
 let isMatchingKeyPressed = false;
 
+function setIsKeyDown(value) {
+  isKeyDown = value;
+}
+
+function setKeyPressedSinceLastX(value) {
+  keyPressedSinceLastX = value;
+}
+
+function setIsMatchingKeyPressed(value) {
+  isMatchingKeyPressed = value;
+}
+
 function showX() {
   const gameCanvas = document.getElementById('game-canvas');
   let missed = gameCanvas.querySelector('.missed');
@@ -72,34 +84,4 @@ playAgainButton.addEventListener('click', () => {
   restartGame();
 });
 
-document.addEventListener('keydown', (event) => {
-  const keyPressed = event.key;
-  const displayedImageKey = document.querySelector('#speech-bubble img').dataset.key;
-  if (keyPressed !== displayedImageKey) {
-    isKeyDown = true;
-  } else if (keyPressed === displayedImageKey) {
-    isMatchingKeyPressed = true;
-  }
-  if (xCount === 3) {
-    showGameOverModal();
-  }
-});
-
-document.addEventListener('keyup', (event) => {
-  // isKeyDown = false;
-  // keyPressedSinceLastX = true;
-  // Rest of the code...
-
-  const keyLifted = event.key;
-  const displayedImageKey = document.querySelector('#speech-bubble img').dataset.key;
-  
-  if (keyLifted === displayedImageKey) {
-    isMatchingKeyPressed = false;
-  }
-  keyPressedSinceLastX = true;
-  isKeyDown = false;
-  // showX();
-});
-
-
-export { showX, resetKeyPressedFlag };
+export { showX, resetKeyPressedFlag, hideIntroduction, startGame, showGameOverModal, hideGameOverModal, restartGame, isKeyDown, keyPressedSinceLastX, setIsMatchingKeyPressed, setIsKeyDown, setKeyPressedSinceLastX, xCount };

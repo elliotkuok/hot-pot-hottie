@@ -56,6 +56,16 @@ function startTimer(duration) {
     timerId = setInterval(updateTimerBar, timerInterval);
 }
 
+// Getter function for timerId
+function getTimerId() {
+  return timerId;
+}
+
+// Setter function for timerId
+function setTimerId(newTimerId) {
+  timerId = newTimerId;
+}
+
 function hideTimerBar() {
   const speechBubble = document.getElementById('speech-bubble');
   const timerBar = speechBubble.querySelector('.timer-bar');
@@ -108,7 +118,6 @@ function hideSpeechBubble() {
       showSpeechBubble();
     }, 2000);
   }, 500);
-
 }
 
 function showSpeechBubble() {
@@ -126,61 +135,8 @@ function showSpeechBubble() {
 let isMatchingKeyPressed = false;
 let isKeyPressed = false;
 
-document.addEventListener('keydown', (event) => {
-  const keyPressed = event.key;
-  const displayedImageElement = document.querySelector('#speech-bubble img');
-  const displayedImageKey = displayedImageElement ? displayedImageElement.dataset.key : null;
-  const speechBubble = document.getElementById('speech-bubble');
+function setIsKeyPressed(value) {
+  isKeyPressed = value;
+}
 
-  if (keyPressed === displayedImageKey) {
-    isMatchingKeyPressed = true;
-    isKeyPressed = true;
-    speechBubble.style.background = '#66FF99';
-  } else {
-    isKeyPressed = true;
-    isMatchingKeyPressed = false;
-    speechBubble.style.background = '#DD2C00';
-  }
-  hideTimerBar();
-});
-
-document.addEventListener('keyup', (event) => {
-  // const keyLifted = event.key;
-  // const displayedImageElement = document.querySelector('#speech-bubble img');
-  // const displayedImageKey = displayedImageElement ? displayedImageElement.dataset.key : null;
-
-  // // Check if the displayedImageKey is the same as the key lifted
-  // const isMatchingKey = displayedImageKey === keyLifted;
-
-  // if (keyLifted === displayedImageKey) {
-  //   isMatchingKeyPressed = false;
-  // }
-
-  const keyLifted = event.key;
-  const displayedImageElement = document.querySelector('#speech-bubble img');
-
-  if (displayedImageElement) {
-    const displayedImageKey = displayedImageElement.dataset.key;
-    if (keyLifted === displayedImageKey) {
-      isMatchingKeyPressed = false;
-    }
-  }
-  isKeyPressed = false; 
-  // setTimeout(() => {
-  //   showSpeechBubble();
-  // }, 2000);
-  // add animation response of putting food into pot
-
-  // displayRandomImage();
-  if (timerId !== null) {
-    clearInterval(timerId);
-    timerId = null;
-  }
-
-  // Show the speech bubble again
-  setTimeout(() => {
-    showSpeechBubble();
-  }, 2000);
-});
-
-export { displayRandomImage, foodItems }; // Export the function and foodItems hash
+export { displayRandomImage, foodItems, isKeyPressed, hideTimerBar, setIsKeyPressed, startTimer, getTimerId, setTimerId, showSpeechBubble }; // Export the function and foodItems hash

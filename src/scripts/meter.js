@@ -71,23 +71,8 @@ function resetMeterAnimation() {
   moveCircle(); // Start the meter animation again
 }
 
-document.addEventListener('keydown', (event) => {
-  const keyPressed = event.key;
-  const displayedImageKey = document.querySelector('#speech-bubble img').dataset.key;
-  if (keyPressed === displayedImageKey) {
-    displayMeter();
-  } else {
-    showX();
-  }
-});
-
-document.addEventListener('keyup', () => {
-  stopMovingCircle();
-  turnMeterColor()
-});
-
 moveCircle();
 
 // Export the functions to use them in the main game logic (index.js)
-export { moveCircle, stopMovingCircle }; 
+export { moveCircle, stopMovingCircle, displayMeter, turnMeterColor }; 
 

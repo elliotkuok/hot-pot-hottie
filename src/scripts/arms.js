@@ -118,21 +118,4 @@ function moveArmToHotPot() {
 }
 
 
-document.addEventListener('keydown', (event) => {
-  const keyPressed = event.key;
-  const displayedImageKey = document.querySelector('#speech-bubble img').dataset.key;
-  if (keyPressed === displayedImageKey) {
-    moveArmToFood(keyPressed)
-  }
-});
-
-document.addEventListener('keyup', (event) => {
-  const keyPressed = event.key;
-  const displayedImageKey = document.querySelector('#speech-bubble img').dataset.key;
-  if (keyPressed === displayedImageKey) {
-    moveArmToHotPot()
-  }
-});
-
-// Export the moveArmsToNewPosition function to use it in other files
-export default moveArmToFood;
+export {moveArmToFood, moveArmToHotPot};
