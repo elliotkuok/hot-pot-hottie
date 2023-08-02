@@ -1,4 +1,4 @@
-import { displayRandomImage } from './order.js';
+import { displayRandomImage, stopTimer, hideSpeechBubble, showSpeechBubble } from './order.js';
 
 let xCount = 0;
 let isKeyDown = false;
@@ -20,34 +20,34 @@ function setIsMatchingKeyPressed(value) {
 function shouldShowX() {
   // if they pressed a key AND the key press failed (wrong key / wrong timing)
   // OR if they didn't even press a key at all
-  if (xCount < 3) {
     if ((keyPressedSinceLastX && !isMatchingKeyPressed)) {
       console.log("giveX - ", "key pressed was wrong");
       giveX();
     }
-  }
 }
 
 function giveX() {
   const gameCanvas = document.getElementById('game-canvas');
   let missed = gameCanvas.querySelector('.missed');
-  if (!missed) {
-    missed = document.createElement('div');
-    missed.innerText = 'X';
-    missed.className = 'missed';
-    missed.style.position = 'absolute';
-    missed.style.bottom = '5px';
-    missed.style.color = '#DD2C00';
-    missed.style.fontFamily = 'Nerko One';
-    missed.style.fontSize = '60px';
-    gameCanvas.appendChild(missed);
-  } else {
-    missed.innerText += 'X';
-  }
-  xCount++;
-  keyPressedSinceLastX = false;
-  if (xCount === 3) {
-    showGameOverModal();
+  if (xCount < 3) {
+    if (!missed) {
+      missed = document.createElement('div');
+      missed.innerText = 'X';
+      missed.className = 'missed';
+      missed.style.position = 'absolute';
+      missed.style.bottom = '5px';
+      missed.style.color = '#DD2C00';
+      missed.style.fontFamily = 'Nerko One';
+      missed.style.fontSize = '60px';
+      gameCanvas.appendChild(missed);
+    } else {
+      missed.innerText += 'X';
+    }
+    xCount++;
+    keyPressedSinceLastX = false;
+    if (xCount === 3) {
+      showGameOverModal();
+    }
   }
 }
 
@@ -66,9 +66,15 @@ function startGame() {
   displayRandomImage();
 }
 
+function endGame() {
+  hideSpeechBubble();
+  stopTimer();
+}
+
 function showGameOverModal() {
   const modal = document.getElementById('game-over-modal');
   modal.style.display = 'flex';
+  endGame();
 }
 
 function hideGameOverModal() {
@@ -83,7 +89,7 @@ function restartGame() {
   const missedDivs = gameCanvas.querySelectorAll('.missed');
   missedDivs.forEach((div) => div.remove());
   // Call displayRandomImage to start a new game
-  displayRandomImage();
+  showSpeechBubble();
 }
 
 const startButton = document.getElementById('start-button');
@@ -95,4 +101,4 @@ playAgainButton.addEventListener('click', () => {
   restartGame();
 });
 
-export { shouldShowX, giveX, resetKeyPressedFlag, hideIntroduction, startGame, showGameOverModal, hideGameOverModal, restartGame, isKeyDown, keyPressedSinceLastX, setIsMatchingKeyPressed, setIsKeyDown, setKeyPressedSinceLastX, xCount };
+export { shouldShowX, giveX, resetKeyPressedFlag, hideIntroduction, startGame, showGameOverModal, hideGameOverModal, restartGame, isKeyDown, keyPressedSinceLastX, setIsMatchingKeyPressed, setIsKeyDown, setKeyPressedSinceLastX, xCount, endGame };

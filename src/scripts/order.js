@@ -20,6 +20,11 @@ function getRandomImageKey() {
 
 let timerId = null;
 function startTimer(duration) {
+  if (getTimerId()) {
+    // Timer is already running, no need to start a new one
+    console.log("Timer is already running ----------------");
+    return;
+  }
   console.log("startTimer ---------------------");
     let timer = duration;
     const timerInterval = 10; // Update the timer every 10ms
@@ -66,6 +71,13 @@ function startTimer(duration) {
     // Call updateTimerBar every timerInterval (10ms)
     console.log("setting interval every 10ms");
     timerId = setInterval(updateTimerBar, timerInterval);
+}
+
+function stopTimer() {
+  if (timerId !== null) {
+    clearTimeout(timerId);
+    timerId = null;
+  }
 }
 
 // Getter function for timerId
@@ -115,10 +127,10 @@ function clearImageFromSpeechBubble() {
 function hideSpeechBubble() {
   const speechBubble = document.getElementById('speech-bubble');
   const timerBar = speechBubble.querySelector('.timer-bar');
+  speechBubble.style.display = 'none';
   if (timerBar) {
     timerBar.style.display = 'none';
   }
-  speechBubble.style.display = 'none';
   isMatchingKeyPressed = false; // Reset the variable when the timer ends
   
 }
@@ -154,4 +166,4 @@ function setIsKeyPressed(value) {
   isKeyPressed = value;
 }
 
-export { displayRandomImage, foodItems, isKeyPressed, hideTimerBar, setIsKeyPressed, startTimer, getTimerId, setTimerId, showSpeechBubble }; // Export the function and foodItems hash
+export { displayRandomImage, foodItems, isKeyPressed, hideTimerBar, setIsKeyPressed, startTimer, getTimerId, setTimerId, showSpeechBubble, stopTimer, hideSpeechBubble }; // Export the function and foodItems hash

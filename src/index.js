@@ -1,5 +1,5 @@
 import './index.scss';
-import { displayRandomImage, isKeyPressed, hideTimerBar, setIsKeyPressed, startTimer, getTimerId, setTimerId, showSpeechBubble } from './scripts/order.js';
+import { displayRandomImage, isKeyPressed, hideTimerBar, setIsKeyPressed, startTimer, getTimerId, setTimerId, showSpeechBubble, stopTimer } from './scripts/order.js';
 import { moveArmToFood, moveArmToHotPot } from './scripts/arms.js';
 import { shouldShowX, isMatchingKeyPressed, resetKeyPressedFlag, hideIntroduction, startGame, showGameOverModal, hideGameOverModal, restartGame, isKeyDown, keyPressedSinceLastX, setIsMatchingKeyPressed, setIsKeyDown, setKeyPressedSinceLastX, xCount  } from './scripts/game.js';
 import { moveCircle, stopMovingCircle, displayMeter, turnMeterColor } from './scripts/meter.js';
@@ -11,7 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const displayedImageElement = document.querySelector('#speech-bubble img');
     const displayedImageKey = displayedImageElement ? displayedImageElement.dataset.key : null;
     const speechBubble = document.getElementById('speech-bubble');
-
+    if (getTimerId()) {
+        stopTimer();
+        // Additional logic here if needed
+    }
     if (keyPressed === displayedImageKey) {
       moveArmToFood(keyPressed);
       displayMeter();
