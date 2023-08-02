@@ -22,15 +22,13 @@ let timerId = null;
 function startTimer(duration) {
   if (getTimerId()) {
     // Timer is already running, no need to start a new one
-    console.log("Timer is already running ----------------");
     return;
   }
-  console.log("startTimer ---------------------");
+
     let timer = duration;
     const timerInterval = 10; // Update the timer every 10ms
 
     function updateTimerBar() {
-        console.log("updateTimerBar -------");
         const speechBubble = document.getElementById('speech-bubble');
         let timerBar = speechBubble.querySelector('.timer-bar');
 
@@ -49,7 +47,7 @@ function startTimer(duration) {
 
         if (timer <= 0) {
             // Hide the speech-bubble when the timer runs out
-            console.log("giveX - ", "timer ran out");
+            console.log("x from timer")
             giveX();
             speechBubble.style.background = '#DD2C00';
             timerBar.style.background = '#DD2C00';
@@ -67,11 +65,9 @@ function startTimer(duration) {
         timer -= timerInterval / 1000;
     }
 
-    console.log("first updateTimerBar standalone call");
     updateTimerBar(); // Call once immediately to show the initial progress
 
     // Call updateTimerBar every timerInterval (10ms)
-    console.log("setting interval every 10ms");
     timerId = setInterval(updateTimerBar, timerInterval);
 }
 

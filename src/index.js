@@ -1,7 +1,7 @@
 import './index.scss';
 import { displayRandomImage, isKeyPressed, hideTimerBar, setIsKeyPressed, startTimer, getTimerId, setTimerId, showSpeechBubble, stopTimer } from './scripts/order.js';
 import { moveArmToFood, moveArmToHotPot } from './scripts/arms.js';
-import { shouldShowX, isMatchingKeyPressed, resetKeyPressedFlag, hideIntroduction, startGame, showGameOverModal, hideGameOverModal, restartGame, isKeyDown, keyPressedSinceLastX, setIsMatchingKeyPressed, setIsKeyDown, setKeyPressedSinceLastX, xCount  } from './scripts/game.js';
+import { giveX, isMatchingKeyPressed, resetKeyPressedFlag, hideIntroduction, startGame, showGameOverModal, hideGameOverModal, restartGame, isKeyDown, keyPressedSinceLastX, setIsMatchingKeyPressed, setIsKeyDown, setKeyPressedSinceLastX, xCount, shouldShowX  } from './scripts/game.js';
 import { moveCircle, stopMovingCircle, displayMeter, turnMeterColor } from './scripts/meter.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const speechBubble = document.getElementById('speech-bubble');
     if (getTimerId()) {
         stopTimer();
-        // Additional logic here if needed
     }
+
     if (keyPressed === displayedImageKey) {
       moveArmToFood(keyPressed);
       displayMeter();
@@ -23,7 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
       setIsKeyPressed(true);
       speechBubble.style.background = '#66FF99';
     } else {
-      shouldShowX();
+        console.log("x from key down")
+      giveX();
       setIsKeyDown(true);
       setIsKeyPressed(true);
       setIsMatchingKeyPressed(false);
@@ -39,9 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (keyLifted === displayedImageKey) {
         moveArmToHotPot();
+        stopMovingCircle();
+        turnMeterColor();
     }
-    stopMovingCircle();
-    turnMeterColor();
     hideTimerBar();
     setKeyPressedSinceLastX(true);
     setIsKeyDown(false);
