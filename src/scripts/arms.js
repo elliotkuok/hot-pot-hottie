@@ -112,15 +112,30 @@ function moveArmToHotPot() {
     const currentX = parseFloat(arm.style.left) || -150;
     const currentY = parseFloat(arm.style.top) || 250;
     // Define the new position for the arms to the hot pot position
-    const newX = -50; // Adjust this value based on your desired hot pot position
-    const newY = 250; // Adjust this value based on your desired hot pot position
+    const firstNewX = -50; // The first destination left position (move to -50)
+    const firstNewY = 250; // The first destination top position (same as the currentY)
+    const finalNewX = -200; // The final destination left position (move to -200)
+    const finalNewY = 250; // The final destination top position (same as the currentY)
     
     // Call the animation function to update the arms' position smoothly
-    animateArm(newX, newY);
+    animateArm(firstNewX, firstNewY);
     setTimeout(() => {
-      
-      animateArm(currentX, currentY, newX, newY);
+      animateArm(finalNewX, finalNewY);
     }, 1500);
+  } else {
+    const currentX = parseFloat(arm.style.left) || -150;
+    const currentY = parseFloat(arm.style.top) || 250;
+    // Define the new position for the arms to the hot pot position
+    const firstNewX = -168; // The first destination left position (move to -50)
+    const firstNewY = 300; // The first destination top position (same as the currentY)
+    const finalNewX = -200; // The final destination left position (move to -200)
+    const finalNewY = 250; // The final destination top position (same as the currentY)
+    
+    // Call the animation function to update the arms' position smoothly
+    animateArm(firstNewX, firstNewY);
+    setTimeout(() => {
+      animateArm(finalNewX, finalNewY);
+    }, 250);
   }
 }
 
