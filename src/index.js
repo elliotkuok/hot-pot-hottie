@@ -1,13 +1,11 @@
 import './index.scss';
 import { displayRandomImage, isKeyPressed, hideTimerBar, setIsKeyPressed, startTimer, getTimerId, setTimerId, showSpeechBubble } from './scripts/order.js';
 import { moveArmToFood, moveArmToHotPot } from './scripts/arms.js';
-import { showX, isMatchingKeyPressed, resetKeyPressedFlag, hideIntroduction, startGame, showGameOverModal, hideGameOverModal, restartGame, isKeyDown, keyPressedSinceLastX, setIsMatchingKeyPressed, setIsKeyDown, setKeyPressedSinceLastX, xCount  } from './scripts/game.js';
+import { shouldShowX, isMatchingKeyPressed, resetKeyPressedFlag, hideIntroduction, startGame, showGameOverModal, hideGameOverModal, restartGame, isKeyDown, keyPressedSinceLastX, setIsMatchingKeyPressed, setIsKeyDown, setKeyPressedSinceLastX, xCount  } from './scripts/game.js';
 import { moveCircle, stopMovingCircle, displayMeter, turnMeterColor } from './scripts/meter.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Your game setup and initialization code here
 
-  // Add event listeners for user interactions, e.g., adding food to the hotpot
   document.addEventListener('keydown', (event) => {
     const keyPressed = event.key;
     const displayedImageElement = document.querySelector('#speech-bubble img');
@@ -22,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setIsKeyPressed(true);
       speechBubble.style.background = '#66FF99';
     } else {
-      showX();
+      shouldShowX();
       setIsKeyDown(true);
       setIsKeyPressed(true);
       setIsMatchingKeyPressed(false);

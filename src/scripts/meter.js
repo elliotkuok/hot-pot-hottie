@@ -1,5 +1,5 @@
 import moveArmToFood from './arms.js';
-import { showX, resetKeyPressedFlag } from './game.js';
+import { giveX, resetKeyPressedFlag } from './game.js';
 
 const circle = document.querySelector('.circle');
 const meterWidth = 300;
@@ -33,7 +33,8 @@ function stopMovingCircle() {
   const displayedImageKey = document.querySelector('#speech-bubble img')?.dataset?.key ?? '';
   if (circleLeftPosition < 125 || circleLeftPosition > 160) {
     isCircleInDesiredRange = false;
-    showX();
+    console.log("giveX - ", "released outside of green");
+    giveX();
   } else {
     isCircleInDesiredRange = true;
   }
@@ -52,7 +53,6 @@ function turnMeterColor() {
     progressBar.style.border = 'yellow';
   } else {
     progressBar.style.background = '#DD2C00';
-    showX();
   }
   setTimeout(() => {
     meter.style.display = 'none';

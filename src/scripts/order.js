@@ -1,4 +1,4 @@
-import { showX, resetKeyPressedFlag } from './game.js';
+import { giveX, resetKeyPressedFlag } from './game.js';
 
 const foodItems = {
     sausage: { image: 'sausage.png', key: 'w' },
@@ -20,10 +20,12 @@ function getRandomImageKey() {
 
 let timerId = null;
 function startTimer(duration) {
+  console.log("startTimer ---------------------");
     let timer = duration;
     const timerInterval = 10; // Update the timer every 10ms
 
     function updateTimerBar() {
+        console.log("updateTimerBar -------");
         const speechBubble = document.getElementById('speech-bubble');
         let timerBar = speechBubble.querySelector('.timer-bar');
 
@@ -42,7 +44,8 @@ function startTimer(duration) {
 
         if (timer <= 0) {
             // Hide the speech-bubble when the timer runs out
-            showX();
+            console.log("giveX - ", "timer ran out");
+            giveX();
             speechBubble.style.background = '#DD2C00';
             timerBar.style.background = '#DD2C00';
             setTimeout(() => {
@@ -57,9 +60,11 @@ function startTimer(duration) {
         timer -= timerInterval / 1000;
     }
 
+    console.log("first updateTimerBar standalone call");
     updateTimerBar(); // Call once immediately to show the initial progress
 
     // Call updateTimerBar every timerInterval (10ms)
+    console.log("setting interval every 10ms");
     timerId = setInterval(updateTimerBar, timerInterval);
 }
 
@@ -99,6 +104,7 @@ function displayRandomImage() {
   startTimer(3);
 
   resetKeyPressedFlag();
+  speechBubble.style.background = 'white';
 }
 
 function clearImageFromSpeechBubble() {
@@ -117,8 +123,14 @@ function hideSpeechBubble() {
   
 }
 
+let isShowingSpeechBubble = false;
 
 function showSpeechBubble() {
+  if (isShowingSpeechBubble) {
+    return; // If the function is already running, don't run it again
+  }
+  isShowingSpeechBubble = true; 
+
   clearImageFromSpeechBubble()
   if (!isKeyPressed) {
     const speechBubble = document.getElementById('speech-bubble');
@@ -126,6 +138,10 @@ function showSpeechBubble() {
     displayRandomImage();
     speechBubble.style.display = 'block';
   }
+
+  setTimeout(() => {
+    isShowingSpeechBubble = false;
+  }, 1000);
 }
 
 // Call the displayRandomImage function to show the initial random image

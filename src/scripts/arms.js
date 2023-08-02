@@ -109,7 +109,7 @@ function moveArmToHotPot() {
   if (circleLeftPosition >= 125 && circleLeftPosition <= 160) {
   
     
-    const currentX = parseFloat(arm.style.left) || -200;
+    const currentX = parseFloat(arm.style.left) || -150;
     const currentY = parseFloat(arm.style.top) || 250;
     // Define the new position for the arms to the hot pot position
     const newX = -50; // Adjust this value based on your desired hot pot position

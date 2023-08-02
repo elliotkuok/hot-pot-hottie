@@ -2,7 +2,7 @@ import { displayRandomImage } from './order.js';
 
 let xCount = 0;
 let isKeyDown = false;
-let keyPressedSinceLastX = true;
+let keyPressedSinceLastX = false;
 let isMatchingKeyPressed = false;
 
 function setIsKeyDown(value) {
@@ -17,34 +17,42 @@ function setIsMatchingKeyPressed(value) {
   isMatchingKeyPressed = value;
 }
 
-function showX() {
+function shouldShowX() {
+  // if they pressed a key AND the key press failed (wrong key / wrong timing)
+  // OR if they didn't even press a key at all
+  if (xCount < 3) {
+    if ((keyPressedSinceLastX && !isMatchingKeyPressed)) {
+      console.log("giveX - ", "key pressed was wrong");
+      giveX();
+    }
+  }
+}
+
+function giveX() {
   const gameCanvas = document.getElementById('game-canvas');
   let missed = gameCanvas.querySelector('.missed');
-  if (xCount < 3 && keyPressedSinceLastX && !isMatchingKeyPressed) {
-      if (!missed) {
-        missed = document.createElement('div');
-        missed.innerText = 'X';
-        missed.className = 'missed';
-        missed.style.position = 'absolute';
-        missed.style.bottom = '5px';
-        missed.style.color = '#DD2C00';
-        missed.style.fontFamily = 'Nerko One';
-        missed.style.fontSize = '60px';
-        gameCanvas.appendChild(missed);
-      } else {
-        missed.innerText += 'X';
-      }
-
-      xCount++;
-      keyPressedSinceLastX = false;
-      if (xCount === 3) {
-        showGameOverModal();
-      }
+  if (!missed) {
+    missed = document.createElement('div');
+    missed.innerText = 'X';
+    missed.className = 'missed';
+    missed.style.position = 'absolute';
+    missed.style.bottom = '5px';
+    missed.style.color = '#DD2C00';
+    missed.style.fontFamily = 'Nerko One';
+    missed.style.fontSize = '60px';
+    gameCanvas.appendChild(missed);
+  } else {
+    missed.innerText += 'X';
+  }
+  xCount++;
+  keyPressedSinceLastX = false;
+  if (xCount === 3) {
+    showGameOverModal();
   }
 }
 
 function resetKeyPressedFlag() {
-  keyPressedSinceLastX = true;
+  keyPressedSinceLastX = false;
   isMatchingKeyPressed = false;
 }
 
@@ -87,4 +95,4 @@ playAgainButton.addEventListener('click', () => {
   restartGame();
 });
 
-export { showX, resetKeyPressedFlag, hideIntroduction, startGame, showGameOverModal, hideGameOverModal, restartGame, isKeyDown, keyPressedSinceLastX, setIsMatchingKeyPressed, setIsKeyDown, setKeyPressedSinceLastX, xCount };
+export { shouldShowX, giveX, resetKeyPressedFlag, hideIntroduction, startGame, showGameOverModal, hideGameOverModal, restartGame, isKeyDown, keyPressedSinceLastX, setIsMatchingKeyPressed, setIsKeyDown, setKeyPressedSinceLastX, xCount };
