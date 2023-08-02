@@ -21,7 +21,6 @@ function shouldShowX() {
   // if they pressed a key AND the key press failed (wrong key / wrong timing)
   // OR if they didn't even press a key at all
     if ((keyPressedSinceLastX && !isMatchingKeyPressed)) {
-      console.log("giveX - ", "key pressed was wrong");
       giveX();
     }
 }

@@ -1,4 +1,4 @@
-import { giveX, resetKeyPressedFlag } from './game.js';
+import { giveX, resetKeyPressedFlag, xCount } from './game.js';
 
 const foodItems = {
     sausage: { image: 'sausage.png', key: 'w' },
@@ -58,9 +58,11 @@ function startTimer(duration) {
             }, 1000);
             clearInterval(timerId);
             timerId = null;
-            setTimeout(() => {
-              showSpeechBubble();
-            }, 2000);
+            if (xCount < 3) {
+              setTimeout(() => {
+                showSpeechBubble();
+              }, 2000);
+            }
         }
         timer -= timerInterval / 1000;
     }

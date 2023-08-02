@@ -33,7 +33,6 @@ function stopMovingCircle() {
   const displayedImageKey = document.querySelector('#speech-bubble img')?.dataset?.key ?? '';
   if (circleLeftPosition < 125 || circleLeftPosition > 160) {
     isCircleInDesiredRange = false;
-    console.log("giveX - ", "released outside of green");
     giveX();
   } else {
     isCircleInDesiredRange = true;
