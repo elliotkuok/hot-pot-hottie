@@ -17,13 +17,11 @@ function setIsMatchingKeyPressed(value) {
   isMatchingKeyPressed = value;
 }
 
-// function shouldShowX() {
-//   // if they pressed a key AND the key press failed (wrong key / wrong timing)
-//   // OR if they didn't even press a key at all
-//     if ((keyPressedSinceLastX && !isMatchingKeyPressed)) {
-//       giveX();
-//     }
-// }
+function shouldShowX() {
+    if (!isKeyDown) {
+      giveX();
+    }
+}
 
 function giveX() {
   const gameCanvas = document.getElementById('game-canvas');
@@ -100,4 +98,4 @@ playAgainButton.addEventListener('click', () => {
   restartGame();
 });
 
-export { giveX, resetKeyPressedFlag, hideIntroduction, startGame, showGameOverModal, hideGameOverModal, restartGame, isKeyDown, keyPressedSinceLastX, setIsMatchingKeyPressed, setIsKeyDown, setKeyPressedSinceLastX, xCount, endGame };
+export { shouldShowX, giveX, resetKeyPressedFlag, hideIntroduction, startGame, showGameOverModal, hideGameOverModal, restartGame, isKeyDown, keyPressedSinceLastX, setIsMatchingKeyPressed, setIsKeyDown, setKeyPressedSinceLastX, xCount, endGame };

@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
       speechBubble.style.background = '#66FF99';
     } else {
         console.log("x from key down")
-      giveX();
+      shouldShowX();
       setIsKeyDown(true);
       setIsKeyPressed(true);
       setIsMatchingKeyPressed(false);
