@@ -1,7 +1,7 @@
 #meter {
     width: 300px;
     height: 15px;
-    /* border: 1px solid black; */
+    border: 2px solid black;
     position: absolute;
     top: 30px; 
     overflow: hidden;
@@ -21,7 +21,7 @@
     height: 13px;
     border-radius: 50%;
     background-color: white;
-    border: 1px solid black;
+    border: 2px solid black;
     position: absolute;
     top: 0;
     left: 0;

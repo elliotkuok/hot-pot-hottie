@@ -62,8 +62,8 @@ h1 {
 }
 
 img#table {
-    width: 80%;
-    height: 100%;
+    width: 500px;
+    height: 400px;
     position: absolute;
     top: 0px;
 }
@@ -76,7 +76,7 @@ img#table {
 }
 
 #speech-bubble {
-    border: solid;
+    border: 2px solid;
     position: absolute;
     top: 50px;
     right: 20px;

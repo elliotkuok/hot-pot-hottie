@@ -5,7 +5,7 @@ const circle = document.querySelector('.circle');
 const meterWidth = 300;
 let animationId;
 let currentPosition = 0;
-let moveSpeed = 2;
+let moveSpeed = 3;
 let moveDirection = 'right';
 let isCircleInDesiredRange = false;
 
