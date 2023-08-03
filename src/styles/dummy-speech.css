@@ -1,6 +1,6 @@
 #dummy-speech-bubble {
-    top: 100px; /* Adjust the positioning as needed */
-    left: 100px; /* Adjust the positioning as needed */
+    top: 100px;
+    left: 100px;
     background-color: #FFF;
     border: 2px solid #000;
     border-radius: 10px;
@@ -11,7 +11,7 @@
   
   #dummy-timer-bar {
     height: 5px;
-    background-color: #4caf50; /* Red color for timer bar */
+    background-color: #4caf50;
     border-radius: 5px;
     width: 100%;
     animation: timerAnimation 3s linear infinite;

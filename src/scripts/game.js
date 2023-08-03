@@ -59,7 +59,7 @@ function hideIntroduction() {
 }
 
 function startGame() {
-  hideIntroduction(); // Hide the introduction when the game starts
+  hideIntroduction();
   displayRandomImage();
 }
 
@@ -80,12 +80,10 @@ function hideGameOverModal() {
 }
 
 function restartGame() {
-  xCount = 0; // Reset xCount to 0
-  // Hide any existing "X" divs on the screen
+  xCount = 0;
   const gameCanvas = document.getElementById('game-canvas');
   const missedDivs = gameCanvas.querySelectorAll('.missed');
   missedDivs.forEach((div) => div.remove());
-  // Call displayRandomImage to start a new game
   showSpeechBubble();
 }
 

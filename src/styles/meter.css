@@ -3,8 +3,7 @@
     height: 15px;
     /* border: 1px solid black; */
     position: absolute;
-    top: 30px; /* Adjust the distance from the bottom */
-    /* transform: translateX(50%); change if #game-canvas align-items: is changed*/ 
+    top: 30px; 
     overflow: hidden;
     z-index: 2;
     display: none;

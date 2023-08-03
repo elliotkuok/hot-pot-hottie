@@ -5,10 +5,6 @@ function moveArmToFood(keyPressed) {
   const circle = document.querySelector('.circle');
   const circleLeftPosition = parseFloat(circle.style.left) || 0;
 
-  // Check if the circle position is within the range (125px to 160px)
-  // if (circleLeftPosition >= 125 && circleLeftPosition <= 160) {
-  //   moveArmToHotPot();
-  // } else {
     // Define the new position for the arms based on the key pressed
     let newX;
     let newY = 250;
@@ -66,7 +62,7 @@ function animateArm(targetX, targetY) {
   const distanceY = targetY - currentY;
 
   // Define the duration of the animation in milliseconds
-  const duration = 500; // You can adjust this value for faster or slower animation
+  const duration = 500; // Adjust this value for faster or slower animation
 
   // Get the current timestamp
   let startTime = null;

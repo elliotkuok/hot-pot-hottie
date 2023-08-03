@@ -5,7 +5,7 @@ const circle = document.querySelector('.circle');
 const meterWidth = 300;
 let animationId;
 let currentPosition = 0;
-let moveSpeed = 2; // Setting to 3 for now but remember to change
+let moveSpeed = 2;
 let moveDirection = 'right';
 let isCircleInDesiredRange = false;
 
@@ -65,13 +65,12 @@ function resetMeterAnimation() {
   const gradientValue = 'linear-gradient(to right, #DD2C00 35%, #66FF99 45%, #66FF99 55%, #DD2C00 65%)';
 
   progressBar.style.background = gradientValue;
-  currentPosition = 0; // Reset the current position of the circle
-  moveDirection = 'right'; // Reset the direction of movement to right
+  currentPosition = 0;
+  moveDirection = 'right';
   moveCircle(); // Start the meter animation again
 }
 
 moveCircle();
 
-// Export the functions to use them in the main game logic (index.js)
 export { moveCircle, stopMovingCircle, displayMeter, turnMeterColor }; 
 

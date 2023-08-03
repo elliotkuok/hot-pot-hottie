@@ -36,7 +36,7 @@ function startTimer(duration) {
             timerBar = document.createElement('div');
             timerBar.className = 'timer-bar';
             const statusBar = document.createElement('div');
-            statusBar.className = 'status-bar'; // Use 'status-bar' class for the timer bar
+            statusBar.className = 'status-bar';
             timerBar.appendChild(statusBar);
             speechBubble.appendChild(timerBar);
         }
@@ -78,12 +78,10 @@ function stopTimer() {
   }
 }
 
-// Getter function for timerId
 function getTimerId() {
   return timerId;
 }
 
-// Setter function for timerId
 function setTimerId(newTimerId) {
   timerId = newTimerId;
 }
@@ -107,9 +105,8 @@ function displayRandomImage() {
   imageElement.src = imageSrc;
   imageElement.alt = imageKey;
   imageElement.dataset.key = foodItems[imageKey].key; // Save the assigned key as a data attribute
-  // imageElement.id = imageKey + "prompt"; do I need this
 
-  speechBubble.innerHTML = ''; // Clear existing content
+  speechBubble.innerHTML = '';
   speechBubble.appendChild(imageElement);
   startTimer(3);
 
@@ -153,9 +150,6 @@ function showSpeechBubble() {
     isShowingSpeechBubble = false;
   }, 1000);
 }
-
-// Call the displayRandomImage function to show the initial random image
-// displayRandomImage();
 
 let isMatchingKeyPressed = false;
 let isKeyPressed = false;
