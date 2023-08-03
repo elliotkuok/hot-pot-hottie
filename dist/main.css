@@ -226,6 +226,7 @@ img#table {
 
 .modal-content p {
   margin: 20px 0;
+  line-height: 25px;
 }
 
 #play-again-button {

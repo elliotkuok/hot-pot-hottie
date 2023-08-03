@@ -11,36 +11,36 @@ function moveArmToFood(keyPressed) {
 
     switch (keyPressed) {
       case 'w': // Sausage
-        newX = -150;
-        newY = 250;
+        newX = -180;
+        newY = 50;
         break;
       case 'a': // Mushroom
-        newX = -150;
-        newY = 250;
+        newX = -60;
+        newY = 50;
         break;
       case 's': // Shrimp
-        newX = -150;
-        newY = 250;
+        newX = -120;
+        newY = 100;
         break;
       case 'd': // Fishball
-        newX = -150;
-        newY = 250;
+        newX = -200;
+        newY = 115;
         break;
       case 'ArrowUp': // Meatball
-        newX = -150;
+        newX = -140;
         newY = 250;
         break;
       case 'ArrowLeft': // Dumpling
-        newX = -150;
-        newY = 250;
+        newX = -145;
+        newY = 176;
         break;
       case 'ArrowDown': // Bokchoy
-        newX = -150;
-        newY = 250;
+        newX = -80;
+        newY = 320;
         break;
       case 'ArrowRight': // Tofu
-        newX = -150;
-        newY = 250;
+        newX = -200;
+        newY = 330;
         break;
       default:
         // If the key doesn't match any food item, don't move the arms
@@ -62,7 +62,7 @@ function animateArm(targetX, targetY) {
   const distanceY = targetY - currentY;
 
   // Define the duration of the animation in milliseconds
-  const duration = 500; // Adjust this value for faster or slower animation
+  const duration = 600; // Adjust this value for faster or slower animation
 
   // Get the current timestamp
   let startTime = null;
@@ -109,7 +109,7 @@ function moveArmToHotPot() {
     const currentY = parseFloat(arm.style.top) || 250;
     // Define the new position for the arms to the hot pot position
     const firstNewX = -50; // The first destination left position (move to -50)
-    const firstNewY = 250; // The first destination top position (same as the currentY)
+    const firstNewY = 220; // The first destination top position (same as the currentY)
     const finalNewX = -200; // The final destination left position (move to -200)
     const finalNewY = 250; // The final destination top position (same as the currentY)
     
