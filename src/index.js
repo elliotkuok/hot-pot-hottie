@@ -1,7 +1,7 @@
 import './index.scss';
 import { displayRandomImage, isKeyPressed, hideTimerBar, setIsKeyPressed, startTimer, getTimerId, setTimerId, showSpeechBubble, stopTimer } from './scripts/order.js';
 import { moveArmToFood, moveArmToHotPot } from './scripts/arms.js';
-import { giveX, isMatchingKeyPressed, resetKeyPressedFlag, hideIntroduction, startGame, showGameOverModal, hideGameOverModal, restartGame, isKeyDown, keyPressedSinceLastX, setIsMatchingKeyPressed, setIsKeyDown, setKeyPressedSinceLastX, xCount, shouldShowX  } from './scripts/game.js';
+import { giveX, isMatchingKeyPressed, resetKeyPressedFlag, hideIntroduction, startGame, showGameOverModal, hideGameOverModal, restartGame, isKeyDown, keyPressedSinceLastX, setIsMatchingKeyPressed, setIsKeyDown, setKeyPressedSinceLastX, xCount, shouldShowX, checkWin  } from './scripts/game.js';
 import { moveCircle, stopMovingCircle, displayMeter, turnMeterColor } from './scripts/meter.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const displayedImageElement = document.querySelector('#speech-bubble img');
     const displayedImageKey = displayedImageElement ? displayedImageElement.dataset.key : null;
     const speechBubble = document.getElementById('speech-bubble');
+
     if (getTimerId()) {
         stopTimer();
     }
@@ -42,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         moveArmToHotPot();
         stopMovingCircle();
         turnMeterColor();
+        checkWin();
     }
     hideTimerBar();
     setKeyPressedSinceLastX(true);

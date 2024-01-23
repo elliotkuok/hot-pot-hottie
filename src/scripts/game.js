@@ -4,6 +4,7 @@ let xCount = 0;
 let isKeyDown = false;
 let keyPressedSinceLastX = false;
 let isMatchingKeyPressed = false;
+let validKeyCount = 0;
 
 function setIsKeyDown(value) {
   isKeyDown = value;
@@ -15,6 +16,13 @@ function setKeyPressedSinceLastX(value) {
 
 function setIsMatchingKeyPressed(value) {
   isMatchingKeyPressed = value;
+}
+
+function checkWin() {
+  validKeyCount++;
+  if (validKeyCount === 5) {
+    showGameOverModal();
+  }
 }
 
 function shouldShowX() {
@@ -66,10 +74,28 @@ function startGame() {
 function endGame() {
   hideSpeechBubble();
   stopTimer();
+  const gameCanvas = document.getElementById('game-canvas');
+  const missedElement = gameCanvas.querySelector('.missed');
+  if (missedElement) {
+    missedElement.style.display = 'none';
+  }
 }
 
 function showGameOverModal() {
   const modal = document.getElementById('game-over-modal');
+  const modalText1 = document.getElementById('modal-text-1');
+  const modalText2 = document.getElementById('modal-text-2');
+  const modalTitle = document.getElementById('modal-title');
+
+  if (xCount === 3) {
+    modalText1.style.display = 'block'; 
+    modalText2.style.display = 'none';  
+  } else if (validKeyCount === 5) {
+    modalTitle.innerHTML = "Congratulations";
+    modalText1.style.display = 'none';  
+    modalText2.style.display = 'block';
+  }
+
   modal.style.display = 'flex';
   endGame();
 }
@@ -81,6 +107,7 @@ function hideGameOverModal() {
 
 function restartGame() {
   xCount = 0;
+  validKeyCount = 0;
   const gameCanvas = document.getElementById('game-canvas');
   const missedDivs = gameCanvas.querySelectorAll('.missed');
   missedDivs.forEach((div) => div.remove());
@@ -96,4 +123,4 @@ playAgainButton.addEventListener('click', () => {
   restartGame();
 });
 
-export { shouldShowX, giveX, resetKeyPressedFlag, hideIntroduction, startGame, showGameOverModal, hideGameOverModal, restartGame, isKeyDown, keyPressedSinceLastX, setIsMatchingKeyPressed, setIsKeyDown, setKeyPressedSinceLastX, xCount, endGame };
+export { shouldShowX, giveX, resetKeyPressedFlag, hideIntroduction, startGame, showGameOverModal, hideGameOverModal, restartGame, isKeyDown, keyPressedSinceLastX, setIsMatchingKeyPressed, setIsKeyDown, setKeyPressedSinceLastX, xCount, endGame, checkWin };
