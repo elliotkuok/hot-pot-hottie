@@ -12,7 +12,7 @@ const foodItems = {
 };
 
 // Function to randomly select an image key from the foodItems object
-function getRandomImageKey() {
+function getRandomFood() {
     const keys = Object.keys(foodItems);
     const randomIndex = Math.floor(Math.random() * keys.length);
     return keys[randomIndex];
@@ -97,17 +97,32 @@ function hideTimerBar() {
 // Function to display the selected image in the speech-bubble div
 function displayRandomImage() {
   const speechBubble = document.getElementById('speech-bubble');
-  const imageKey = getRandomImageKey();
-  const imageName = foodItems[imageKey].image;
+  const imageKeys = getRandomFood();
+  const imageName = foodItems[imageKeys].image;
   const imageSrc = `assets/food-icons/${imageName}`;
+  const imageKey = foodItems[imageKeys].key;
 
   const imageElement = document.createElement('img');
   imageElement.src = imageSrc;
-  imageElement.alt = imageKey;
-  imageElement.dataset.key = foodItems[imageKey].key; // Save the assigned key as a data attribute
+  imageElement.alt = imageKeys;
+  imageElement.dataset.key = foodItems[imageKeys].key; // Save the assigned key as a data attribute
+
+  const foodKey = document.createElement('p');
+  if (imageKey === 'ArrowRight') {
+    foodKey.innerHTML =  "&#8594;"
+  } else if (imageKey === 'ArrowLeft') {
+    foodKey.innerHTML =  "&#8592;"
+  } else if (imageKey === 'ArrowUp') {
+    foodKey.innerHTML =  "&#8593;"
+  } else if (imageKey === 'ArrowDown') {
+    foodKey.innerHTML =  "&#8595;"
+  } else {
+    foodKey.innerHTML = imageKey.toUpperCase();
+  }
 
   speechBubble.innerHTML = '';
   speechBubble.appendChild(imageElement);
+  speechBubble.appendChild(foodKey);
   startTimer(3);
 
   resetKeyPressedFlag();
